@@ -90,23 +90,23 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: '🌍',
+                num: '01',
                 title: 'Represent a Country',
-                body: 'Each delegate takes on the role of a country representative and must defend that nation\'s position on complex international issues — regardless of their personal views. Thorough preparation and research are essential.',
+                body: 'Each delegate takes on the role of a country representative and must defend that nation\'s position on complex international issues — regardless of their personal views. You will research your country\'s history, foreign policy, and alliances before arriving in Pau, so that you can speak confidently and persuasively on the floor. Thorough preparation is what separates a good delegate from a great one.',
               },
               {
-                icon: '🎤',
+                num: '02',
                 title: 'Debate & Negotiate',
-                body: 'Through formal speeches, working papers, and resolution drafting, delegates practice the art of diplomacy. You will argue, compromise, build coalitions, and learn what it truly takes to reach international consensus.',
+                body: 'Through formal speeches, working papers, and resolution drafting, delegates practise the art of diplomacy in real time. You will argue your country\'s position, seek allies, negotiate compromises, and experience first-hand what it takes to reach international consensus on some of the world\'s most pressing challenges. Every word on the floor matters.',
               },
               {
-                icon: '🤝',
+                num: '03',
                 title: 'Grow & Connect',
-                body: 'MUN builds confidence, critical thinking, and public speaking skills that last a lifetime. Beyond the debate hall, you will form friendships with students from partner schools across Europe and the world.',
+                body: 'MUN builds confidence, critical thinking, and public speaking skills that last a lifetime. Students who attend consistently report that MUN is one of the most formative experiences of their school career. Beyond the debate hall, you will build lasting friendships with students from partner schools across Europe — bonds that extend far beyond the three days in Pau.',
               },
-            ].map(({ icon, title, body }) => (
+            ].map(({ num, title, body }) => (
               <div key={title} className="card">
-                <div className="text-4xl mb-4">{icon}</div>
+                <p className="text-5xl font-bold text-gold/30 mb-4 leading-none">{num}</p>
                 <h3 className="text-xl font-bold text-navy mb-3">{title}</h3>
                 <p className="text-gray-600 leading-relaxed">{body}</p>
               </div>
