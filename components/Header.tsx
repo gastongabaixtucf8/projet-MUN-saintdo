@@ -48,8 +48,8 @@ export default function Header() {
           <Image
             src="/images/logo MUN.webp"
             alt="MUN Saint Dominique"
-            width={72}
-            height={72}
+            width={100}
+            height={100}
             className="rounded-md"
           />
           <div className="hidden sm:block leading-tight">
