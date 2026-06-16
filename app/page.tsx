@@ -1,7 +1,7 @@
 import { client } from '@/lib/sanity/client'
 
 async function getMessage(): Promise<string | null> {
-  return client.fetch(`*[_type == "siteSettings"][0].message`)
+  return client.fetch(`*[_type == "siteSettings"][0].message`, {}, { cache: 'no-store' })
 }
 
 export default async function Page() {
