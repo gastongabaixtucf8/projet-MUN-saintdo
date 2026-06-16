@@ -24,8 +24,10 @@ const XIcon = () => (
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
+  { href: '/about', label: 'About Us' },
+  { href: '/pau', label: 'Pau & Travel' },
   { href: '/gallery', label: 'Gallery' },
+  { href: '/contact', label: 'Contact' },
 ]
 
 const socialLinks = [
@@ -39,34 +41,34 @@ export default function Header() {
 
   return (
     <header className="bg-navy sticky top-0 z-50 shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
 
         {/* Logo + Title */}
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-4 shrink-0">
           <Image
             src="/images/logo MUN.webp"
             alt="MUN Saint Dominique"
-            width={48}
-            height={48}
-            className="rounded"
+            width={72}
+            height={72}
+            className="rounded-md"
           />
-          <span className="text-white font-bold text-lg hidden sm:block leading-tight">
-            MUN<br />
-            <span className="text-gold text-sm font-normal">Saint Dominique</span>
-          </span>
+          <div className="hidden sm:block leading-tight">
+            <p className="text-white font-bold text-xl">MUN Saint Dominique</p>
+            <p className="text-gold text-sm font-normal">Institut Saint Dominique · Pau</p>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-6 flex-1 justify-center">
           {navLinks.map(({ href, label }) => (
-            <Link key={href} href={href} className="nav-link">
+            <Link key={href} href={href} className="nav-link text-sm whitespace-nowrap">
               {label}
             </Link>
           ))}
         </nav>
 
-        {/* Social links */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* Social + CTA */}
+        <div className="hidden lg:flex items-center gap-4 shrink-0">
           {socialLinks.map(({ href, label, Icon }) => (
             <a
               key={href}
@@ -79,11 +81,19 @@ export default function Header() {
               <Icon />
             </a>
           ))}
+          <a
+            href="https://mymun.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gold text-navy font-bold px-4 py-2 rounded-lg text-sm hover:bg-yellow-400 transition-colors ml-2"
+          >
+            Register
+          </a>
         </div>
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden text-white p-2"
+          className="lg:hidden text-white p-2"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -98,13 +108,22 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-navy-light border-t border-white/10 px-4 py-4 flex flex-col gap-4">
+        <div className="lg:hidden bg-navy-mid border-t border-white/10 px-6 py-5 flex flex-col gap-4">
           {navLinks.map(({ href, label }) => (
             <Link key={href} href={href} className="nav-link text-lg" onClick={() => setMenuOpen(false)}>
               {label}
             </Link>
           ))}
-          <div className="flex gap-4 pt-2 border-t border-white/10">
+          <a
+            href="https://mymun.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary text-center mt-2"
+            onClick={() => setMenuOpen(false)}
+          >
+            Register on MyMUN
+          </a>
+          <div className="flex gap-5 pt-3 border-t border-white/10">
             {socialLinks.map(({ href, label, Icon }) => (
               <a key={href} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="text-white hover:text-gold">
                 <Icon />
