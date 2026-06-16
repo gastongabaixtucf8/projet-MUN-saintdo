@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-Static website for the **MUN Saint Dominique** conference (Institut Saint Dominique, Pau). Conference dates: 19–21 March 2027. No build system — plain HTML, CSS, and JavaScript, deployed to Netlify (also linked to Vercel under project `projet-mun-saintdo`).
+Website for the **MUN Saint Dominique** conference (Institut Saint Dominique, Pau). Conference dates: 19–21 March 2027. Stack: **Next.js** (frontend) + **Sanity** (CMS) + **Vercel** (hosting).
 
 ## Git workflow
 
@@ -12,71 +12,59 @@ After every file edit, Claude automatically runs `git add -A && git commit -m "a
 
 ## Development
 
-Open `index.html` directly in a browser, or serve locally with:
-
 ```bash
-npx serve .
-# or
-python3 -m http.server 8080
+# Web app (Next.js) — runs on localhost:3000
+npm run dev
+
+# Sanity Studio — runs on localhost:3333
+cd studio && npm run dev
 ```
 
-No build step, no package manager, no compilation required.
+Both need their own env files filled in (see below) before they work.
 
-## Site structure
+## Environment variables
 
-| File | Page |
-|---|---|
-| `index.html` | Accueil (hero, présentation, contact) |
-| `about.html` | À propos (école, programme MUN, partenariat Alleyn's) |
-| `pau.html` | Pau & Infos pratiques (carte Google Maps, hôtels, transport) |
-| `conference.html` | Conférence (comité organisateur, inscription, PDFs) |
-| `gallery.html` | Galerie photos |
+**Web app** — create `.env.local` at the root (copy from `.env.local.example`):
+```
+NEXT_PUBLIC_SANITY_PROJECT_ID=your-project-id
+NEXT_PUBLIC_SANITY_DATASET=production
+```
 
-Shared assets: `style.css` (global styles), `script.js` (nav, gallery, PDF rendering).
+**Studio** — create `studio/.env` (copy from `studio/.env.example`):
+```
+SANITY_STUDIO_PROJECT_ID=your-project-id
+SANITY_STUDIO_DATASET=production
+```
+
+The Sanity project ID is found at sanity.io/manage → your project → Settings.
+
+## Project structure
 
 ```
 projet-mun/
-├── index.html
-├── about.html
-├── pau.html
-├── conference.html
-├── gallery.html
-├── style.css
-├── script.js
-├── admin/
-│   ├── index.html      — Interface admin (Decap CMS)
-│   └── config.yml      — Configuration du CMS
-├── _data/
-│   ├── pdfs.json       — Liste des PDFs
-│   └── gallery.json    — Liste des photos
-└── images/
-    ├── logo MUN.webp
-    ├── ville-de-pau.webp
-    ├── chateau-pau.webp
-    ├── pau-tour-de-france.webp
-    ├── section-paloise.webp
-    ├── gallery/        — Photos galerie (gérées via admin)
-    └── committee/      — Photos du comité organisateur
+├── app/                    — Next.js pages (App Router)
+│   ├── layout.tsx
+│   ├── page.tsx            — Home page, fetches message from Sanity
+│   └── globals.css
+├── lib/sanity/
+│   └── client.ts           — Sanity client
+├── studio/                 — Sanity Studio (standalone)
+│   ├── sanity.config.ts
+│   └── schemaTypes/
+│       └── siteSettings.ts — "message" field shown on home page
+├── package.json            — Next.js deps
+└── next.config.ts
 ```
 
-## Content management (Decap CMS)
+## How content works
 
-An admin panel lives at `/admin` (Decap CMS, configured in `admin/config.yml`). It reads and writes two JSON data files:
+- Admins open the Studio, find **Site Settings**, and change the **Message** field
+- The Next.js page fetches `*[_type == "siteSettings"][0].message` from Sanity
+- If no message is set, the page falls back to `"Hello Cows"`
 
-- `_data/pdfs.json` — documents shown on the Conference page
-- `_data/gallery.json` — photos shown on the Gallery page
+## Sanity schema
 
-Gallery images are stored in `images/gallery/`; committee photos in `images/committee/`. Each admin save creates a GitHub commit and Netlify redeploys automatically.
-
-### Netlify Identity + Git Gateway setup (one-time)
-
-1. **Site configuration** → **Identity** → **"Enable Identity"**
-2. **Identity** → **Services** → **"Enable Git Gateway"**
-3. **Identity** → **Users** → **"Invite users"** → enter admin emails
-4. Admins receive an email to set their password
-5. They access `/admin`, log in, and manage content
-
-Without Netlify: edit `_data/pdfs.json` directly for PDFs; drop photos into `images/gallery/` and register them in `_data/gallery.json`.
+Currently one document type: `siteSettings` with a single `message` (string) field. This is the test schema — the real site will add: gallery photos, conference PDFs, committee members, page content.
 
 ## Key content facts
 
@@ -84,14 +72,14 @@ Without Netlify: edit `_data/pdfs.json` directly for PDFs; drop photos into `ima
 - Registration: via MyMUN (`mymun.com`)
 - Partner school: Alleyn's School, London (`alleynsmun.co.uk`)
 - Venue: 30 Avenue Fouchet, 64000 Pau
-- Recommended hotels: B&B Hôtel Pau Centre (budget), Kyriad Pau Centre (mid-range), Hôtel Ostal (boutique)
+- Conference dates: 19–21 March 2027
 
 ## Pending tasks
 
 | Task | Owner | Status |
 |---|---|---|
+| Create Sanity account + project, fill in env files | Gaston | To do |
 | Gallery photos | Mme Lemoine | Waiting |
 | Organising committee names & photos | Secrétariat (September) | Waiting |
 | Hotel booking links & prices | — | To confirm |
 | Conference document PDFs | Organising committee | Upcoming |
-| Netlify Identity + Git Gateway activation | Netlify admin | To do |
