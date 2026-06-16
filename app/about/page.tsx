@@ -107,64 +107,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── What is MUN? ── */}
-      <section className="py-24 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="section-title text-4xl">What is Model United Nations?</h2>
-          <div className="space-y-6 text-gray-700 leading-relaxed text-lg max-w-4xl">
-            <p>
-              Model United Nations (MUN) is an educational simulation of the United Nations in which students act
-              as delegates representing different countries and debate real-world international issues. Participants
-              research a country&rsquo;s position, write position papers, give speeches, and draft resolutions to address
-              global challenges.
-            </p>
-            <p>
-              MUN develops a wide range of critical skills: public speaking, research, critical thinking, teamwork,
-              negotiation, and empathy. Delegates leave with a far deeper understanding of international relations,
-              the workings of multilateral institutions, and the enormous complexity of finding global consensus on
-              issues like climate change, conflict, human rights, and economic inequality.
-            </p>
-            <p>
-              Through MUN, Institut Saint Dominique&rsquo;s students take on leadership through delegate roles that require
-              negotiation and collaboration; enhance their public speaking skills by presenting their country&rsquo;s positions
-              before peers; gain an international perspective on geopolitics and the UN system; and develop empathy by
-              genuinely engaging with viewpoints very different from their own.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 mt-12">
-            {[
-              {
-                step: 'Step 1',
-                title: 'Position Papers',
-                text: 'Before the conference, delegates write a position paper outlining their country\'s stance on each committee topic. This research phase is essential preparation — it forces you to understand your country\'s foreign policy, its alliances, its vulnerabilities, and how it has historically approached similar issues at the UN.',
-              },
-              {
-                step: 'Step 2',
-                title: 'Formal Debate',
-                text: 'In committee sessions, delegates deliver formal speeches, ask points of information, and engage in structured debate governed by the Rules of Procedure. The chair maintains order and ensures every country has a fair opportunity to speak. The quality of your argument matters more than the power of the country you represent.',
-              },
-              {
-                step: 'Step 3',
-                title: 'Resolutions',
-                text: 'Delegates collaborate to draft and amend resolutions — formal documents outlining proposed solutions to global problems. Sponsors write the resolution, signatories support debating it, and amendments can be proposed from the floor. The final document is voted on by the whole committee.',
-              },
-              {
-                step: 'Step 4',
-                title: 'Awards',
-                text: 'Outstanding delegates are recognised with Best Delegate, Outstanding Delegate, and Verbal Commendation awards presented at the closing ceremony. Awards are given for the quality of research, speeches, diplomacy, and resolution writing — not simply for being the loudest voice in the room.',
-              },
-            ].map(({ step, title, text }) => (
-              <div key={title} className="card">
-                <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-2">{step}</p>
-                <h3 className="font-bold text-navy text-lg mb-2">{title}</h3>
-                <p className="text-gray-600 leading-relaxed">{text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Leadership Team ── */}
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
