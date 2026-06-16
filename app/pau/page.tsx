@@ -283,7 +283,7 @@ export default function PauPage() {
           <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200">
             <iframe
               title="Institut Saint Dominique, Pau"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-0.3900%2C43.2830%2C-0.3550%2C43.3050&layer=mapnik&marker=43.2940%2C-0.3725"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-0.3950%2C43.2990%2C-0.3550%2C43.3290&layer=mapnik&marker=43.3140%2C-0.3748"
               width="100%"
               height="460"
               style={{ border: 0 }}
