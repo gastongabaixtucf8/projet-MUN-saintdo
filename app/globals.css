@@ -13,12 +13,24 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gold text-navy font-bold px-8 py-3 rounded hover:bg-yellow-400 transition-colors inline-block;
+    @apply bg-gold text-navy font-bold px-8 py-3 rounded-lg hover:bg-yellow-400 transition-colors inline-block;
+  }
+  .btn-outline {
+    @apply border-2 border-gold text-gold font-bold px-8 py-3 rounded-lg hover:bg-gold hover:text-navy transition-colors inline-block;
   }
   .section-title {
     @apply text-3xl font-bold text-navy mb-6;
   }
   .nav-link {
     @apply text-white hover:text-gold transition-colors font-medium;
+  }
+  .card {
+    @apply bg-white rounded-xl shadow-md p-8 border-t-4 border-gold;
+  }
+  .page-hero {
+    @apply bg-navy text-white py-20 px-6 text-center;
+  }
+  .form-input {
+    @apply w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:border-navy-mid focus:ring-1 focus:ring-navy-mid;
   }
 }
