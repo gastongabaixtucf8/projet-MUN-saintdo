@@ -7,8 +7,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        navy: '#1a2744',
-        'navy-light': '#243158',
+        navy: '#0e1f42',
+        'navy-mid': '#1a3a72',
+        'navy-light': '#2a5298',
         gold: '#c9a84c',
       },
       fontFamily: {
