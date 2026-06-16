@@ -211,7 +211,9 @@ export default function PauPage() {
             {/* By Car */}
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
               <div className="flex items-start gap-5">
-                <div className="text-4xl shrink-0">🚗</div>
+                <div className="w-12 h-12 rounded-xl bg-navy/10 flex items-center justify-center shrink-0">
+                  <svg width="22" height="22" fill="none" stroke="#0e1f42" strokeWidth="1.8" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h7.5M3.375 10.5l1.5-4.5h13.5l1.5 4.5M3.375 10.5H2.25v1.5h1.125m17.25-1.5H21.75v1.5h-1.125m-17.25 0h17.25M5.625 10.5v6.75m12.75-6.75v6.75M3.375 10.5h17.25"/></svg>
+                </div>
                 <div>
                   <h3 className="text-xl font-bold text-navy mb-3">By Car</h3>
                   <p className="text-gray-600 leading-relaxed mb-3">
