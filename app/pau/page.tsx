@@ -116,28 +116,28 @@ export default function PauPage() {
             {[
               {
                 category: 'Close to School',
-                icon: '📍',
-                description: 'Several hotels are located within a 5-minute walk of Institut Saint Dominique on Avenue Fouchet. These are the most convenient options for delegates.',
+                tag: 'Most convenient',
+                description: 'Several hotels are located within a 5-minute walk of Institut Saint Dominique on Avenue Fouchet. For delegates who want to minimise travel time between sessions and their accommodation, this is the most practical choice. You will be able to return to your hotel at lunch breaks and after evening events without needing transport.',
                 note: 'Booking links will be confirmed closer to the conference.',
               },
               {
                 category: 'City Centre',
-                icon: '🏙️',
-                description: 'Pau\'s city centre is about 10–15 minutes from the school by bus or taxi. This area offers a wider range of restaurants and activities between sessions.',
-                note: 'Bus service is frequent and inexpensive (€1.20 per journey).',
+                tag: 'Best for exploration',
+                description: 'Pau\'s vibrant city centre is about 10–15 minutes from the school by bus or on foot. Staying here puts you close to the main restaurants, cafés, shops, the château, and the Boulevard des Pyrénées. It is an excellent option for delegates who want to experience Pau fully beyond the conference itself.',
+                note: 'Bus service is frequent and costs just €1.20 per journey.',
               },
               {
                 category: 'Budget Options',
-                icon: '💡',
-                description: 'There are several budget hotels and accommodation options in and around Pau. We recommend checking booking platforms well in advance for the best prices.',
+                tag: 'Best value',
+                description: 'There are several affordable hotels, residences, and student accommodation options in and around Pau. We recommend checking booking platforms well in advance of the conference, as the city can fill up during busy periods. Contact us if you need advice on organising accommodation for a school group.',
                 note: 'Contact us for school-group accommodation advice.',
               },
-            ].map(({ category, icon, description, note }) => (
+            ].map(({ category, tag, description, note }) => (
               <div key={category} className="card flex flex-col">
-                <div className="text-3xl mb-3">{icon}</div>
+                <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-2">{tag}</p>
                 <h3 className="font-bold text-navy text-lg mb-3">{category}</h3>
                 <p className="text-gray-600 leading-relaxed mb-4 flex-1">{description}</p>
-                <p className="text-sm text-gold font-medium">{note}</p>
+                <p className="text-sm text-navy-mid font-medium">{note}</p>
               </div>
             ))}
           </div>
