@@ -139,41 +139,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Discover Pau ── */}
-      <section className="relative py-24 px-6 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/ville-de-pau.webp"
-            alt="Ville de Pau"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-navy/65" />
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto text-white text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">Discover Pau</h2>
-          <p className="text-lg text-white/85 leading-relaxed mb-5">
-            Pau is a charming city nestled at the foothills of the Pyrénées, in the heart of the Béarn region of
-            southwestern France. Between the mountains and the Atlantic Ocean, it offers a rare combination of
-            natural beauty, cultural richness, and sporting heritage.
-          </p>
-          <p className="text-white/70 leading-relaxed mb-5">
-            Birthplace of King Henry IV, Pau was the first city in continental Europe to have an 18-hole golf
-            course, attracting British aristocrats in the 19th century. The famous Boulevard des Pyrénées offers
-            one of the most spectacular urban panoramas in France — a 1.8 km promenade with breathtaking views
-            of the mountain range.
-          </p>
-          <p className="text-white/70 leading-relaxed mb-10">
-            Named the most athletic city in France in 2024, Pau has hosted the Tour de France many times and is
-            home to the legendary Section Paloise rugby club. It is a city that inspires ambition, teamwork, and
-            excellence — the perfect backdrop for MUN Saint Dominique 2027.
-          </p>
-          <Link href="/pau" className="btn-primary">
-            Explore Pau & Travel Info
-          </Link>
-        </div>
-      </section>
-
       {/* ── Things to Do ── */}
       <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
