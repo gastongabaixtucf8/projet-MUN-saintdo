@@ -218,34 +218,23 @@ export default function Home() {
 
       {/* ── Partners ── */}
       <section className="py-20 px-6 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="section-title text-4xl">Our Partner School</h2>
-          <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
-            MUN Saint Dominique is built on a strong transatlantic partnership that brings together two schools
-            united by a shared passion for international dialogue.
+        <div className="max-w-4xl mx-auto">
+          <h2 className="section-title text-4xl">Partnerships</h2>
+          <p className="text-gray-700 text-lg leading-relaxed mb-8">
+            We are thrilled to announce our collaboration with The Alleyn&rsquo;s Schools Group in organizing this
+            prestigious conference. This partnership brings together the rich educational heritage of both
+            institutions, fostering a dynamic exchange of ideas and perspectives. As we look ahead to 2027, we
+            are excited about the opportunity to host this event in the beautiful city of Pau, where we will
+            continue to promote world-class holistic education and strengthen our global community.
           </p>
-          <div className="flex flex-col sm:flex-row gap-8 justify-center">
-            <div className="flex-1 max-w-xs mx-auto rounded-2xl border border-gray-200 shadow-sm p-8">
-              <div className="w-16 h-16 bg-navy rounded-xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-gold text-2xl font-bold">ISD</span>
-              </div>
-              <h3 className="font-bold text-navy text-lg mb-2">Institut Saint Dominique</h3>
-              <p className="text-gray-500">Pau, France</p>
-              <p className="text-gold font-semibold mt-2 text-sm">Host School</p>
-            </div>
-            <div className="flex items-center justify-center text-3xl text-gray-300">×</div>
-            <div className="flex-1 max-w-xs mx-auto rounded-2xl border border-gray-200 shadow-sm p-8">
-              <div className="w-16 h-16 bg-navy-mid rounded-xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-gold text-2xl font-bold">AS</span>
-              </div>
-              <h3 className="font-bold text-navy text-lg mb-2">Alleyn&rsquo;s School</h3>
-              <p className="text-gray-500">Dulwich, London, UK</p>
-              <p className="text-gold font-semibold mt-2 text-sm">Partner School</p>
-            </div>
-          </div>
-          <p className="text-gray-500 mt-10 text-sm">
-            Previously co-hosted the MUN Alleyn&rsquo;s International conference in 2024 &amp; 2025.
-          </p>
+          <a
+            href="https://www.alleynsmun.co.uk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary inline-block"
+          >
+            Visit Alleyn&rsquo;s MUN
+          </a>
         </div>
       </section>
 
