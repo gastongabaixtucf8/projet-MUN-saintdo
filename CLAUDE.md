@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Static website for the **MUN Saint Dominique** conference (Institut Saint Dominique, Pau). Conference dates: 19–21 March 2027. No build system — plain HTML, CSS, and JavaScript, deployed to Netlify (also linked to Vercel under project `projet-mun-saintdo`).
 
+## Git workflow
+
+After every file edit, Claude automatically runs `git add -A && git commit -m "auto-save" && git push origin main` via a PostToolUse hook in `.claude/settings.json`. No manual commits needed.
+
 ## Development
 
 Open `index.html` directly in a browser, or serve locally with:
