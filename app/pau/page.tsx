@@ -293,7 +293,7 @@ export default function PauPage() {
           </div>
           <p className="text-center mt-4">
             <a
-              href="https://www.openstreetmap.org/?mlat=43.2940&mlon=-0.3725#map=16/43.2940/-0.3725"
+              href="https://www.openstreetmap.org/?mlat=43.3140&mlon=-0.3748#map=17/43.3140/-0.3748"
               target="_blank"
               rel="noopener noreferrer"
               className="text-navy-mid hover:text-gold transition-colors text-sm underline"
