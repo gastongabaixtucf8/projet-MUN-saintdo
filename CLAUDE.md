@@ -74,6 +74,12 @@ Currently one document type: `siteSettings` with a single `message` (string) fie
 - Venue: 30 Avenue Fouchet, 64000 Pau
 - Conference dates: 19–21 March 2027
 
+## Writing rules
+
+- **Never use emojis** anywhere in the codebase — not in JSX, not in text content, not in comments. Use SVG icons or plain text labels instead.
+- No comments in code unless the reason is non-obvious.
+- All site content is in English.
+
 ## Pending tasks
 
 | Task | Owner | Status |
