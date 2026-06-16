@@ -4,44 +4,142 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <main>
-      {/* Hero */}
-      <section className="relative bg-navy text-white py-32 px-6 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy/90 to-navy" />
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <p className="text-gold uppercase tracking-widest text-sm font-semibold mb-4">
-            19 – 21 March 2027 · Pau, France
+
+      {/* ── Hero ── */}
+      <section className="relative bg-navy min-h-[88vh] flex items-center justify-center text-white overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/ville-de-pau.webp"
+            alt="Pau, France"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-6 py-24 text-center">
+          <Image
+            src="/images/logo MUN.webp"
+            alt="MUN Saint Dominique"
+            width={140}
+            height={140}
+            className="mx-auto mb-8 rounded-xl"
+          />
+          <p className="text-gold uppercase tracking-[0.2em] text-sm font-semibold mb-5">
+            19 – 20 – 21 March 2027 · Pau, France
           </p>
-          <h1 className="text-5xl sm:text-6xl font-bold leading-tight mb-6">
-            MUN Saint Dominique
+          <h1 className="text-5xl sm:text-7xl font-bold leading-tight mb-6">
+            Model United Nations
           </h1>
-          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-            Join future world leaders at the Model United Nations conference hosted by
-            Institut Saint Dominique.
+          <p className="text-2xl sm:text-3xl text-white/80 font-light mb-4 italic">
+            &ldquo;Together towards a pact for the future&rdquo;
           </p>
-          <a href="mailto:mun@saintdominique.fr" className="btn-primary">
-            Register Now
-          </a>
+          <p className="text-white/65 text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
+            MUN Saint Dominique is hosted by Institut Saint Dominique, Pau, France —
+            in partnership with Alleyn&rsquo;s School, London. Join delegates from across
+            Europe for three days of diplomacy, debate, and discovery.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://mymun.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary text-lg px-10 py-4"
+            >
+              Apply on MyMUN
+            </a>
+            <Link href="/about" className="btn-outline text-lg px-10 py-4">
+              Learn More
+            </Link>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-white/40">
+          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
         </div>
       </section>
 
-      {/* About the Conference */}
-      <section className="py-20 px-6 max-w-5xl mx-auto">
-        <h2 className="section-title text-center">About the Conference</h2>
-        <div className="grid md:grid-cols-3 gap-8 mt-10">
+      {/* ── Key Facts ── */}
+      <section className="py-16 px-6 bg-white border-b border-gray-100">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
-            { title: 'Debate', body: 'Represent a country, defend its positions, and negotiate with delegates from around the world on global challenges.' },
-            { title: 'Learn', body: 'Develop skills in public speaking, diplomacy, research, and collaborative problem-solving.' },
-            { title: 'Connect', body: 'Build lasting friendships with students from partner schools across Europe and beyond.' },
-          ].map(({ title, body }) => (
-            <div key={title} className="bg-white rounded-xl shadow-md p-8 border-t-4 border-gold">
-              <h3 className="text-xl font-bold text-navy mb-3">{title}</h3>
-              <p className="text-gray-600 leading-relaxed">{body}</p>
+            { value: '3', label: 'Days of Conference' },
+            { value: '2027', label: 'March 19–21' },
+            { value: 'Pau', label: 'South of France' },
+            { value: 'MyMUN', label: 'Register Online' },
+          ].map(({ value, label }) => (
+            <div key={label} className="py-6">
+              <p className="text-4xl font-bold text-navy-mid mb-1">{value}</p>
+              <p className="text-gray-500 text-sm uppercase tracking-wide">{label}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Discover Pau */}
+      {/* ── What is MUN? ── */}
+      <section className="py-24 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="section-title text-4xl">What is Model United Nations?</h2>
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+              A unique educational experience that transforms students into diplomats, thinkers, and global citizens.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: '🌍',
+                title: 'Represent a Country',
+                body: 'Each delegate takes on the role of a country representative and must defend that nation\'s position on complex international issues — regardless of their personal views. Thorough preparation and research are essential.',
+              },
+              {
+                icon: '🎤',
+                title: 'Debate & Negotiate',
+                body: 'Through formal speeches, working papers, and resolution drafting, delegates practice the art of diplomacy. You will argue, compromise, build coalitions, and learn what it truly takes to reach international consensus.',
+              },
+              {
+                icon: '🤝',
+                title: 'Grow & Connect',
+                body: 'MUN builds confidence, critical thinking, and public speaking skills that last a lifetime. Beyond the debate hall, you will form friendships with students from partner schools across Europe and the world.',
+              },
+            ].map(({ icon, title, body }) => (
+              <div key={title} className="card">
+                <div className="text-4xl mb-4">{icon}</div>
+                <h3 className="text-xl font-bold text-navy mb-3">{title}</h3>
+                <p className="text-gray-600 leading-relaxed">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Conference Theme ── */}
+      <section className="py-24 px-6 bg-navy-mid text-white text-center">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-gold uppercase tracking-widest text-sm font-semibold mb-4">MUN Saint Dominique 2027</p>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6">Conference Theme</h2>
+          <p className="text-2xl italic text-white/85 mb-6">
+            &ldquo;Together towards a pact for the future&rdquo;
+          </p>
+          <p className="text-white/70 text-lg leading-relaxed mb-10">
+            Our theme invites delegates to reflect on the collective agreements that shape our shared world —
+            from climate and security to technology and human rights. In a time of global uncertainty, what pact
+            will the next generation of leaders propose? Come to Pau in March 2027 and make your voice heard.
+          </p>
+          <a
+            href="https://mymun.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            Register on MyMUN
+          </a>
+        </div>
+      </section>
+
+      {/* ── Discover Pau ── */}
       <section className="relative py-24 px-6 overflow-hidden">
         <div className="absolute inset-0">
           <Image
@@ -49,81 +147,102 @@ export default function Home() {
             alt="Ville de Pau"
             fill
             className="object-cover"
-            priority
           />
-          <div className="absolute inset-0 bg-navy/60" />
+          <div className="absolute inset-0 bg-navy/65" />
         </div>
-        <div className="relative z-10 max-w-3xl mx-auto text-white text-center">
-          <h2 className="text-4xl font-bold mb-6">Discover Pau</h2>
-          <p className="text-lg text-white/85 leading-relaxed mb-6">
-            Nestled at the foot of the Pyrenees, Pau is a vibrant city with a rich history, breathtaking mountain views, and a warm southern French atmosphere. Home to kings, cyclists, and rugby champions, Pau offers a unique backdrop for an unforgettable conference experience.
+        <div className="relative z-10 max-w-4xl mx-auto text-white text-center">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6">Discover Pau</h2>
+          <p className="text-lg text-white/85 leading-relaxed mb-5">
+            Pau is a charming city nestled at the foothills of the Pyrénées, in the heart of the Béarn region of
+            southwestern France. Between the mountains and the Atlantic Ocean, it offers a rare combination of
+            natural beauty, cultural richness, and sporting heritage.
           </p>
-          <p className="text-white/75 leading-relaxed">
-            Delegates will have the opportunity to explore the city&rsquo;s boulevards, enjoy local cuisine, and experience the famous Pyrenean hospitality during their stay.
+          <p className="text-white/70 leading-relaxed mb-5">
+            Birthplace of King Henry IV, Pau was the first city in continental Europe to have an 18-hole golf
+            course, attracting British aristocrats in the 19th century. The famous Boulevard des Pyrénées offers
+            one of the most spectacular urban panoramas in France — a 1.8 km promenade with breathtaking views
+            of the mountain range.
           </p>
+          <p className="text-white/70 leading-relaxed mb-10">
+            Named the most athletic city in France in 2024, Pau has hosted the Tour de France many times and is
+            home to the legendary Section Paloise rugby club. It is a city that inspires ambition, teamwork, and
+            excellence — the perfect backdrop for MUN Saint Dominique 2027.
+          </p>
+          <Link href="/pau" className="btn-primary">
+            Explore Pau & Travel Info
+          </Link>
         </div>
       </section>
 
-      {/* Things to do in Pau */}
-      <section className="py-20 px-6 bg-gray-50">
+      {/* ── Things to Do ── */}
+      <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="section-title text-center">Things to Do in Pau</h2>
+          <h2 className="section-title text-center text-4xl">Things to Do in Pau</h2>
+          <p className="text-center text-gray-500 mb-14 max-w-2xl mx-auto">
+            Between sessions, explore one of France&rsquo;s most beautiful cities.
+          </p>
 
-          <div className="mt-12 flex flex-col gap-12">
+          <div className="flex flex-col gap-14">
 
-            {/* Row 1: big left, text right */}
-            <div className="flex flex-col md:flex-row gap-6 items-center">
-              <div className="md:w-2/3 rounded-2xl overflow-hidden shadow-lg">
+            {/* Row 1 */}
+            <div className="flex flex-col md:flex-row gap-8 items-center">
+              <div className="md:w-3/5 rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src="/images/chateau-pau.webp"
                   alt="Château de Pau"
-                  width={800}
-                  height={500}
-                  className="w-full h-72 md:h-96 object-cover"
+                  width={900}
+                  height={550}
+                  className="w-full h-72 md:h-[28rem] object-cover"
                 />
               </div>
-              <div className="md:w-1/3 p-6">
-                <h3 className="text-2xl font-bold text-navy mb-3">Château de Pau</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Visit the birthplace of King Henry IV, a Renaissance castle that stands at the heart of Pau and offers panoramic views of the Pyrenees mountains.
+              <div className="md:w-2/5 px-4">
+                <h3 className="text-2xl font-bold text-navy mb-4">Château de Pau</h3>
+                <p className="text-gray-600 leading-relaxed text-lg">
+                  The Château de Pau is a stunning Renaissance castle and the birthplace of King Henry IV of France.
+                  Perched above the city, it offers panoramic views of the Pyrenees and houses remarkable royal
+                  collections. A must-visit for any delegate spending time in Pau.
                 </p>
               </div>
             </div>
 
-            {/* Row 2: text left, big right */}
-            <div className="flex flex-col md:flex-row-reverse gap-6 items-center">
-              <div className="md:w-2/3 rounded-2xl overflow-hidden shadow-lg">
+            {/* Row 2 */}
+            <div className="flex flex-col md:flex-row-reverse gap-8 items-center">
+              <div className="md:w-3/5 rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src="/images/pau-tour-de-france.webp"
                   alt="Tour de France à Pau"
-                  width={800}
-                  height={500}
-                  className="w-full h-72 md:h-80 object-cover"
+                  width={900}
+                  height={550}
+                  className="w-full h-72 md:h-96 object-cover"
                 />
               </div>
-              <div className="md:w-1/3 p-6">
-                <h3 className="text-2xl font-bold text-navy mb-3">Tour de France</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Pau is a legendary stage city of the Tour de France, celebrated for its proximity to the iconic Pyrenean climbs.
+              <div className="md:w-2/5 px-4">
+                <h3 className="text-2xl font-bold text-navy mb-4">Tour de France</h3>
+                <p className="text-gray-600 leading-relaxed text-lg">
+                  Pau is one of the most iconic stage cities of the Tour de France. Its location at the gateway
+                  to the Pyrenees makes it a legendary base for the mountain stages. The city breathes cycling
+                  history, with famous climbs like the Col du Tourmalet just a short drive away.
                 </p>
               </div>
             </div>
 
-            {/* Row 3: half and half */}
-            <div className="flex flex-col md:flex-row gap-6 items-center">
+            {/* Row 3 */}
+            <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="md:w-1/2 rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src="/images/section-paloise.webp"
                   alt="Section Paloise Rugby"
-                  width={800}
-                  height={500}
-                  className="w-full h-64 md:h-72 object-cover"
+                  width={900}
+                  height={550}
+                  className="w-full h-72 md:h-80 object-cover"
                 />
               </div>
-              <div className="md:w-1/2 p-6">
-                <h3 className="text-2xl font-bold text-navy mb-3">Section Paloise</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Experience the passion of French rugby with the Section Paloise, one of the oldest and most beloved clubs in France. Pau&rsquo;s rugby culture is legendary — catch a match if you can!
+              <div className="md:w-1/2 px-4">
+                <h3 className="text-2xl font-bold text-navy mb-4">Section Paloise Rugby</h3>
+                <p className="text-gray-600 leading-relaxed text-lg">
+                  Rugby is the soul of Pau. The Section Paloise is one of the oldest and most respected rugby clubs
+                  in France, competing in the Top 14. If you are visiting during the rugby season, a match at the
+                  Stade du Hameau is an unforgettable experience that captures the city&rsquo;s sporting spirit perfectly.
                 </p>
               </div>
             </div>
@@ -132,19 +251,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Interactive Map */}
-      <section className="py-16 px-6 bg-white">
+      {/* ── Partners ── */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="section-title text-4xl">Our Partner School</h2>
+          <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
+            MUN Saint Dominique is built on a strong transatlantic partnership that brings together two schools
+            united by a shared passion for international dialogue.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-8 justify-center">
+            <div className="flex-1 max-w-xs mx-auto rounded-2xl border border-gray-200 shadow-sm p-8">
+              <div className="w-16 h-16 bg-navy rounded-xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-gold text-2xl font-bold">ISD</span>
+              </div>
+              <h3 className="font-bold text-navy text-lg mb-2">Institut Saint Dominique</h3>
+              <p className="text-gray-500">Pau, France</p>
+              <p className="text-gold font-semibold mt-2 text-sm">Host School</p>
+            </div>
+            <div className="flex items-center justify-center text-3xl text-gray-300">×</div>
+            <div className="flex-1 max-w-xs mx-auto rounded-2xl border border-gray-200 shadow-sm p-8">
+              <div className="w-16 h-16 bg-navy-mid rounded-xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-gold text-2xl font-bold">AS</span>
+              </div>
+              <h3 className="font-bold text-navy text-lg mb-2">Alleyn&rsquo;s School</h3>
+              <p className="text-gray-500">Dulwich, London, UK</p>
+              <p className="text-gold font-semibold mt-2 text-sm">Partner School</p>
+            </div>
+          </div>
+          <p className="text-gray-500 mt-10 text-sm">
+            Previously co-hosted the MUN Alleyn&rsquo;s International conference in 2024 &amp; 2025.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Map ── */}
+      <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <h2 className="section-title text-center">Find Us</h2>
           <p className="text-center text-gray-600 mb-8">
-            Institut Saint Dominique · 36 Rue Saint-Louis, 64000 Pau, France
+            Institut Saint Dominique · 30 Avenue Fouchet, 64000 Pau, France
           </p>
           <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200">
             <iframe
               title="Institut Saint Dominique, Pau"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-0.3740%2C43.2900%2C-0.3550%2C43.3020&layer=mapnik&marker=43.2964%2C-0.3637"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-0.3900%2C43.2830%2C-0.3550%2C43.3050&layer=mapnik&marker=43.2940%2C-0.3725"
               width="100%"
-              height="420"
+              height="440"
               style={{ border: 0 }}
               loading="lazy"
               allowFullScreen
@@ -152,10 +304,10 @@ export default function Home() {
           </div>
           <p className="text-center mt-4">
             <a
-              href="https://www.openstreetmap.org/?mlat=43.2964&mlon=-0.3637#map=15/43.2964/-0.3637"
+              href="https://www.openstreetmap.org/?mlat=43.2940&mlon=-0.3725#map=16/43.2940/-0.3725"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-navy hover:text-gold transition-colors text-sm underline"
+              className="text-navy-mid hover:text-gold transition-colors text-sm underline"
             >
               View larger map
             </a>
@@ -163,26 +315,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact */}
+      {/* ── CTA Banner ── */}
       <section className="py-20 px-6 bg-navy text-white text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
-          <p className="text-white/75 mb-8 text-lg">
-            Questions about the conference? We&rsquo;d love to hear from you.
+          <h2 className="text-4xl font-bold mb-4">Ready to join us in Pau?</h2>
+          <p className="text-white/70 mb-3 text-lg">
+            Registration is open on MyMUN. Spots are limited — apply early.
           </p>
-          <a
-            href="mailto:mun@saintdominique.fr"
-            className="text-gold text-xl font-semibold hover:underline"
-          >
-            mun@saintdominique.fr
-          </a>
-          <div className="mt-10">
-            <Link href="/about" className="btn-primary">
-              Learn More About Us
+          <p className="text-white/55 mb-10 text-sm">
+            Questions? Send us an email at{' '}
+            <a href="mailto:mun@saintdominique.fr" className="text-gold hover:underline">
+              mun@saintdominique.fr
+            </a>
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://mymun.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary text-lg px-10 py-4"
+            >
+              Apply on MyMUN
+            </a>
+            <Link href="/contact" className="btn-outline text-lg px-10 py-4">
+              Contact Us
             </Link>
           </div>
         </div>
       </section>
+
     </main>
   )
 }
