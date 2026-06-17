@@ -21,13 +21,6 @@ export default function Home() {
 
         {/* Text — bottom left */}
         <div className="relative z-10 max-w-2xl px-8 sm:px-14 pb-16 sm:pb-20">
-          <Image
-            src="/images/logo MUN.webp"
-            alt="MUN Saint Dominique"
-            width={100}
-            height={100}
-            className="rounded-xl shadow-2xl mb-6"
-          />
           <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-3">
             Model United Nations
           </h1>
