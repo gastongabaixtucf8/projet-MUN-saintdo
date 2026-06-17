@@ -159,11 +159,15 @@ export default function AboutPage() {
       </section>
 
       {/* Alleyn's */}
-      <section className="py-24 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="section-title text-4xl">Our Partner — Alleyn&rsquo;s School</h2>
+      <section className="relative py-24 px-6 overflow-hidden rounded-[2rem]">
+        <div className="absolute inset-0">
+          <Image src="/images/alleyns-school.jpg" alt="Alleyn's School" fill className="object-cover" />
+          <div className="absolute inset-0 bg-navy/75" />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto">
+          <h2 className="text-4xl font-bold text-white mb-6">Our Partner — Alleyn&rsquo;s School</h2>
           <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div className="space-y-5 text-gray-700 leading-relaxed text-lg">
+            <div className="space-y-5 text-white/85 leading-relaxed text-lg">
               <p>
                 We are thrilled to announce our collaboration with The Alleyn&rsquo;s Schools Group in organising this
                 prestigious conference. This partnership brings together the rich educational heritage of both
