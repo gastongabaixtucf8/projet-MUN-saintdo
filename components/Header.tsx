@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <header className="bg-navy-dark sticky top-0 z-50 shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="px-6 lg:px-10">
 
         {/* Top bar: social links */}
         <div className="hidden lg:flex justify-end items-center gap-5 pt-3 pb-1">
