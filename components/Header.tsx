@@ -42,7 +42,7 @@ export default function Header() {
       </header>
 
       {/* Logo + navigation pills — sticky, follow on scroll, floating over the hero */}
-      <div className="sticky top-3 z-50 px-6 lg:px-10 -mb-16 pointer-events-none">
+      <div className="sticky top-4 z-50 px-6 lg:px-10 pt-5 -mb-[5.5rem] pointer-events-none">
         <div className="flex items-center justify-between gap-4">
 
           {/* Logo pill — globe overflows the pill to stand out */}
