@@ -13,6 +13,8 @@ const navLinks = [
   { href: '/contact', label: 'Contact' },
 ]
 
+const glass = 'bg-navy-dark/30 backdrop-blur-xl backdrop-saturate-150 border border-white/10 shadow-lg shadow-black/20'
+
 export default function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -25,17 +27,46 @@ export default function Header() {
   }, [])
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-300 bg-navy-dark/60 backdrop-blur-xl backdrop-saturate-150 border-b ${
-        scrolled ? 'border-white/10 shadow-lg shadow-black/20' : 'border-transparent shadow-md'
-      }`}
-    >
-      <div className="px-6 lg:px-10">
+    <header className="sticky top-0 z-50">
+      <div className="px-6 lg:px-10 py-4 flex items-center justify-between gap-4">
 
-        {/* Top bar: social links — collapses away on scroll */}
+        {/* Logo + name pill — fades out on scroll */}
+        <Link
+          href="/"
+          className={`flex items-center gap-3 rounded-full pl-2 pr-5 py-2 transition-all duration-300 ${glass} ${
+            scrolled ? 'opacity-0 -translate-x-1 pointer-events-none' : 'opacity-100'
+          }`}
+        >
+          <Image
+            src="/images/logo MUN.webp"
+            alt="MUN Saint Dominique"
+            width={44}
+            height={44}
+            className="rounded-full"
+          />
+          <div className="hidden sm:block leading-tight">
+            <p className="text-white font-bold text-sm">MUN Saint Dominique</p>
+            <p className="text-gold text-[11px]">Institut Saint Dominique · Pau</p>
+          </div>
+        </Link>
+
+        {/* Navigation pill — keeps its vertical position; only the side pills move */}
+        <nav className={`hidden lg:flex items-center gap-1 rounded-full px-2 py-1.5 ${glass}`}>
+          {navLinks.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className="text-white/85 hover:text-white hover:bg-white/10 transition-colors font-medium text-sm px-4 py-1.5 rounded-full"
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Socials + Apply pill — fades out on scroll */}
         <div
-          className={`hidden lg:flex justify-end items-center gap-5 overflow-hidden transition-all duration-300 ${
-            scrolled ? 'max-h-0 opacity-0 pt-0 pb-0' : 'max-h-16 opacity-100 pt-3 pb-1'
+          className={`hidden lg:flex items-center gap-4 rounded-full px-5 py-2.5 transition-all duration-300 ${glass} ${
+            scrolled ? 'opacity-0 translate-x-1 pointer-events-none' : 'opacity-100'
           }`}
         >
           <a href="https://www.instagram.com/mun_saintdo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-white/60 hover:text-gold transition-colors">
@@ -47,54 +78,30 @@ export default function Header() {
           <a href="https://x.com/mun_saintdo" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter" className="text-white/60 hover:text-gold transition-colors">
             <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           </a>
-          <a href="https://mymun.com/" target="_blank" rel="noopener noreferrer" className="text-gold text-xs font-semibold hover:underline ml-2">
+          <span className="w-px h-4 bg-white/15" />
+          <a href="https://mymun.com/" target="_blank" rel="noopener noreferrer" className="text-gold text-xs font-semibold hover:underline whitespace-nowrap">
             Apply on MyMUN →
           </a>
         </div>
 
-        {/* Main nav */}
-        <div className={`flex items-center gap-4 transition-all duration-300 ${scrolled ? 'justify-center py-3' : 'justify-between py-5'}`}>
-          {/* Logo — hidden on scroll so only the navigation follows */}
-          <Link href="/" className={`items-center gap-3 shrink-0 ${scrolled ? 'hidden' : 'flex'}`}>
-            <Image
-              src="/images/logo MUN.webp"
-              alt="MUN Saint Dominique"
-              width={120}
-              height={120}
-              className="rounded-lg"
-            />
-            <div className="hidden sm:block">
-              <p className="text-white font-bold text-lg leading-tight">MUN Saint Dominique</p>
-              <p className="text-gold text-xs">Institut Saint Dominique · Pau</p>
-            </div>
-          </Link>
-
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map(({ href, label }) => (
-              <Link key={href} href={href} className="nav-link">
-                {label}
-              </Link>
-            ))}
-          </nav>
-
-          <button
-            className="lg:hidden text-white p-2 shrink-0"
-            onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
-          >
-            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              {open
-                ? <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                : <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-              }
-            </svg>
-          </button>
-        </div>
+        {/* Mobile hamburger pill */}
+        <button
+          className={`lg:hidden text-white p-3 rounded-full ${glass}`}
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            {open
+              ? <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>
+              : <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            }
+          </svg>
+        </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-navy-dark/90 backdrop-blur-xl border-t border-white/10 px-6 py-5 flex flex-col gap-4">
+        <div className="lg:hidden mx-6 mb-4 rounded-2xl bg-navy-dark/80 backdrop-blur-xl border border-white/10 px-6 py-5 flex flex-col gap-4 shadow-xl">
           {navLinks.map(({ href, label }) => (
             <Link key={href} href={href} className="text-white hover:text-gold font-medium" onClick={() => setOpen(false)}>
               {label}
