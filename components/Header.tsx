@@ -17,7 +17,7 @@ export default function Header() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="bg-navy sticky top-0 z-50 shadow-lg">
+    <header className="bg-navy-dark sticky top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Top bar: social links */}
