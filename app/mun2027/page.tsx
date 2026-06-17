@@ -21,7 +21,7 @@ export default async function MUN2027Page() {
       <section className="page-hero">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-5xl font-bold mb-4">MUN 2027</h1>
-          <p className="text-white/65 text-lg">Theme, committees, documents, and registration.</p>
+          <p className="text-white/65 text-lg">Theme, documents, and registration.</p>
         </div>
       </section>
 
