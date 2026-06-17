@@ -148,7 +148,7 @@ export default async function MUN2027Page() {
       </section>
 
       {/* Register */}
-      <section className="py-20 px-6 bg-navy text-white text-center rounded-[2rem]">
+      <section className="py-20 px-6 bg-navy text-white text-center rounded-t-[2rem]">
         <div className="max-w-xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">Register for MUN 2027</h2>
           <p className="text-white/60 mb-10 text-lg">
