@@ -6,7 +6,7 @@ export default function Home() {
     <main>
 
       {/* Hero */}
-      <section className="relative min-h-[92vh] flex items-end text-white overflow-hidden">
+      <section className="relative min-h-[92vh] flex items-end text-white overflow-hidden rounded-b-[2.5rem]">
         {/* Full background image */}
         <Image
           src="/images/photo-acceuil-MUN.webp"
