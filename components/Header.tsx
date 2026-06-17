@@ -54,15 +54,15 @@ export default function Header() {
       <div className="absolute top-full left-0 right-0 z-10 px-6 lg:px-10 pt-3">
         <div className="flex items-center justify-between gap-4">
 
-          {/* Logo pill */}
-          <Link href="/" className={`flex items-center rounded-full px-6 py-2.5 ${glass}`}>
+          {/* Logo pill — globe overflows the pill to stand out */}
+          <Link href="/" className={`flex items-center rounded-full px-6 py-1.5 ${glass}`}>
             <Image
               src="/images/logo MUN.webp"
               alt="MUN Saint Dominique"
-              width={170}
-              height={53}
+              width={420}
+              height={130}
               priority
-              className="h-9 w-auto"
+              className="h-16 w-auto -my-4"
             />
           </Link>
 
