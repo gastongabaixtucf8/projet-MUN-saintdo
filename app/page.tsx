@@ -15,9 +15,9 @@ export default function Home() {
           className="object-cover"
           priority
         />
-        {/* Gradient: transparent top, dark bottom-left */}
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/70 via-navy/20 to-transparent" />
+        {/* Gradient only at the bottom-left where text sits */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/10 to-transparent" />
 
         {/* Text — bottom left */}
         <div className="relative z-10 max-w-2xl px-8 sm:px-14 pb-16 sm:pb-20">
@@ -28,18 +28,18 @@ export default function Home() {
             height={100}
             className="rounded-xl shadow-2xl mb-6"
           />
-          <p className="text-gold uppercase tracking-[0.25em] text-sm font-semibold mb-3">
-            Pau, France · March 2027
-          </p>
           <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-3">
-            MUN Saint Dominique
+            Model United Nations
           </h1>
-          <p className="text-xl text-white/75 font-light italic mb-4">
-            &ldquo;Together towards a pact for the future&rdquo;
+          <p className="text-xl text-white/85 font-light italic mb-5">
+            Together Towards Global Solutions
           </p>
-          <p className="text-white/60 mb-8 leading-relaxed">
-            Model United Nations hosted by Institut Saint Dominique, Pau —
-            in partnership with Alleyn&rsquo;s School, London.
+          <p className="text-white/70 mb-8 leading-relaxed text-base">
+            Welcome to Saint Dominique MUN. Following several successful conferences organised in partnership
+            with Alleyn&rsquo;s School, London, we are delighted to continue bringing together students from around
+            the world in Pau for an inspiring experience of debate, diplomacy, and international cooperation.
+            We look forward to welcoming delegates, teachers, and guests to the next edition of Saint Dominique
+            Model United Nations.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a href="https://mymun.com/" target="_blank" rel="noopener noreferrer" className="btn-primary text-base px-8 py-3">
