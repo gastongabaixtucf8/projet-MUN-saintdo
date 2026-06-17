@@ -41,4 +41,12 @@ export default defineConfig({
     visionTool(),
   ],
   schema: { types: schemaTypes },
+  document: {
+    // Singletons must never be deleted (deleting them leaves the Studio in a
+    // stuck "read-only" state). Allow editing the file, but not delete/duplicate.
+    actions: (prev, context) =>
+      ['programDocument', 'committeeTopicsDocument'].includes(context.schemaType)
+        ? prev.filter(({ action }) => action !== 'delete' && action !== 'duplicate')
+        : prev,
+  },
 })
