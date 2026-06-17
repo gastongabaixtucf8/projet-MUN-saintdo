@@ -13,7 +13,7 @@ const navLinks = [
   { href: '/contact', label: 'Contact' },
 ]
 
-const glass = 'bg-white/30 backdrop-blur-md backdrop-saturate-150 border-2 border-gray-400/80 shadow-lg shadow-black/10'
+const glass = 'bg-white/45 backdrop-blur-md backdrop-saturate-150 border-2 border-gray-400/80 shadow-lg shadow-black/10'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
