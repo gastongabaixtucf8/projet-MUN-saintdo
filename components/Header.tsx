@@ -60,15 +60,6 @@ export default function Header() {
             ))}
           </nav>
 
-          <a
-            href="https://mymun.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden lg:inline-block bg-gold text-navy text-sm font-bold px-5 py-2 rounded-lg hover:bg-yellow-400 transition-colors shrink-0"
-          >
-            Register
-          </a>
-
           <button
             className="lg:hidden text-white p-2 shrink-0"
             onClick={() => setOpen(!open)}
