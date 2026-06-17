@@ -5,11 +5,31 @@ import { schemaTypes } from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'MUN Saint Dominique',
+  title: 'MUN Saint Dominique — Admin',
   projectId: import.meta.env.SANITY_STUDIO_PROJECT_ID,
   dataset: import.meta.env.SANITY_STUDIO_DATASET ?? 'production',
-  plugins: [structureTool(), visionTool()],
-  schema: {
-    types: schemaTypes,
-  },
+  plugins: [
+    structureTool({
+      structure: (S) =>
+        S.list()
+          .title('Content')
+          .items([
+            S.listItem()
+              .title('Gallery Photos')
+              .schemaType('galleryPhoto')
+              .child(S.documentTypeList('galleryPhoto').title('Gallery Photos')),
+            S.listItem()
+              .title('Programme PDF')
+              .id('programme-singleton')
+              .child(
+                S.document()
+                  .schemaType('programDocument')
+                  .documentId('programme-singleton')
+                  .title('Programme PDF'),
+              ),
+          ]),
+    }),
+    visionTool(),
+  ],
+  schema: { types: schemaTypes },
 })
