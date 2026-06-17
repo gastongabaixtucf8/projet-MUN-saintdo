@@ -17,17 +17,9 @@ const glass = 'bg-white/65 backdrop-blur-md backdrop-saturate-150 border-2 borde
 
 export default function Header() {
   const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   return (
-    <header className="sticky top-0 z-50">
+    <header className="relative z-50">
 
       {/* Top bar: socials + Apply button — collapses away on scroll */}
       <div className={`bg-white relative z-20 overflow-hidden transition-all duration-300 ${scrolled ? 'max-h-0 opacity-0' : 'max-h-24 opacity-100'}`}>
