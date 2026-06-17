@@ -6,23 +6,46 @@ export default function Home() {
     <main>
 
       {/* Hero */}
-      <section className="relative bg-navy min-h-[90vh] flex items-center justify-center text-white overflow-hidden">
-        <div className="absolute inset-0">
-          <Image src="/images/ville-de-pau.webp" alt="Pau, France" fill className="object-cover opacity-15" priority />
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center">
-          <Image src="/images/logo MUN.webp" alt="MUN Saint Dominique" width={160} height={160} className="mx-auto mb-8 rounded-xl shadow-2xl" />
-          <p className="text-gold uppercase tracking-[0.25em] text-sm font-semibold mb-4">Pau, France · March 2027</p>
-          <h1 className="text-5xl sm:text-6xl font-bold leading-tight mb-4">MUN Saint Dominique</h1>
-          <p className="text-2xl text-white/70 font-light italic mb-3">&ldquo;Together towards a pact for the future&rdquo;</p>
-          <p className="text-white/55 mb-10 max-w-xl mx-auto leading-relaxed">
-            Model United Nations hosted by Institut Saint Dominique, Pau — in partnership with Alleyn&rsquo;s School, London.
+      <section className="relative min-h-[92vh] flex items-end text-white overflow-hidden">
+        {/* Full background image */}
+        <Image
+          src="/images/photo-acceuil-MUN.webp"
+          alt="MUN Saint Dominique"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Gradient: transparent top, dark bottom-left */}
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/70 via-navy/20 to-transparent" />
+
+        {/* Text — bottom left */}
+        <div className="relative z-10 max-w-2xl px-8 sm:px-14 pb-16 sm:pb-20">
+          <Image
+            src="/images/logo MUN.webp"
+            alt="MUN Saint Dominique"
+            width={100}
+            height={100}
+            className="rounded-xl shadow-2xl mb-6"
+          />
+          <p className="text-gold uppercase tracking-[0.25em] text-sm font-semibold mb-3">
+            Pau, France · March 2027
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://mymun.com/" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-10 py-4">
+          <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-3">
+            MUN Saint Dominique
+          </h1>
+          <p className="text-xl text-white/75 font-light italic mb-4">
+            &ldquo;Together towards a pact for the future&rdquo;
+          </p>
+          <p className="text-white/60 mb-8 leading-relaxed">
+            Model United Nations hosted by Institut Saint Dominique, Pau —
+            in partnership with Alleyn&rsquo;s School, London.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a href="https://mymun.com/" target="_blank" rel="noopener noreferrer" className="btn-primary text-base px-8 py-3">
               Apply on MyMUN
             </a>
-            <Link href="/mun2027" className="btn-outline text-lg px-10 py-4">
+            <Link href="/mun2027" className="btn-outline text-base px-8 py-3">
               Conference Info
             </Link>
           </div>
