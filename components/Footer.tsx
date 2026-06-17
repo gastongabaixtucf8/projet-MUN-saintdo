@@ -11,7 +11,7 @@ const pages = [
 
 export default function Footer() {
   return (
-    <footer className="bg-navy text-white">
+    <footer className="bg-navy text-white border-t-2 border-black">
       <div className="max-w-7xl mx-auto px-6 py-14">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
