@@ -205,7 +205,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-navy text-white text-center rounded-[2rem]">
+      <section className="py-16 px-6 bg-navy text-white text-center">
         <div className="max-w-xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">Interested in joining?</h2>
           <p className="text-white/60 mb-8">Register on MyMUN or contact us with any questions.</p>
