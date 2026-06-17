@@ -50,7 +50,6 @@ export default async function MUN2027Page() {
               {[
                 { label: 'Dates', value: '19, 20 & 21 March 2027' },
                 { label: 'Location', value: 'Institut Saint Dominique, 30 Avenue Fouchet, 64000 Pau' },
-                { label: 'Language', value: 'English' },
                 { label: 'Registration', value: 'Via MyMUN (mymun.com)' },
                 { label: 'Theme', value: 'To be announced' },
               ].map(({ label, value }) => (
