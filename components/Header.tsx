@@ -52,7 +52,7 @@ export default function Header() {
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map(({ href, label }) => (
               <Link key={href} href={href} className="nav-link">
                 {label}
