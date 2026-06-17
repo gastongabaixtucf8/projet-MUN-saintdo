@@ -121,7 +121,7 @@ export default function Home() {
       </section>
 
       {/* Apply CTA */}
-      <section className="py-20 px-6 bg-navy text-white text-center">
+      <section className="py-20 px-6 bg-navy text-white text-center rounded-[2rem]">
         <div className="max-w-xl mx-auto">
           <h2 className="text-4xl font-bold mb-4">Ready to join us?</h2>
           <p className="text-white/60 mb-3">Registration is open on MyMUN. Spots are limited — apply early.</p>
