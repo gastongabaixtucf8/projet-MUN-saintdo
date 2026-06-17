@@ -99,7 +99,7 @@ export default function Header() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="lg:hidden mt-3 rounded-2xl bg-white/80 backdrop-blur-xl border border-gray-300/70 px-6 py-5 flex flex-col gap-4 shadow-xl">
+          <div className="lg:hidden mt-3 rounded-2xl bg-white/80 backdrop-blur-xl border-2 border-gray-400/80 px-6 py-5 flex flex-col gap-4 shadow-xl">
             {navLinks.map(({ href, label }) => (
               <Link key={href} href={href} className="text-gray-800 hover:text-navy font-semibold uppercase tracking-wide text-sm" onClick={() => setOpen(false)}>
                 {label}
