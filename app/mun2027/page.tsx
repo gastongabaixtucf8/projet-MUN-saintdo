@@ -12,8 +12,16 @@ async function getProgramme(): Promise<{ url: string } | null> {
   )
 }
 
+async function getCommitteeTopics(): Promise<{ url: string } | null> {
+  return client.fetch(
+    `*[_type == "committeeTopicsDocument" && _id == "committee-topics-singleton"][0]{ "url": file.asset->url }`,
+    {},
+    { cache: 'no-store' },
+  )
+}
+
 export default async function MUN2027Page() {
-  const programme = await getProgramme()
+  const [programme, committeeTopics] = await Promise.all([getProgramme(), getCommitteeTopics()])
 
   return (
     <main>
