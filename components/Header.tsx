@@ -19,10 +19,9 @@ export default function Header() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="relative z-50">
-
-      {/* Top bar: socials + Apply button */}
-      <div className="bg-white relative z-20">
+    <>
+      {/* Top bar: socials + Apply button — scrolls away with the page */}
+      <header className="bg-white relative z-40">
         <div className="px-6 lg:px-10 py-2.5 flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <a href="https://www.instagram.com/mun_saintdo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-full bg-navy-dark text-white flex items-center justify-center hover:bg-navy-mid transition-colors">
@@ -40,14 +39,14 @@ export default function Header() {
             Apply on MyMUN
           </a>
         </div>
-      </div>
+      </header>
 
-      {/* Floating pills over the hero */}
-      <div className="absolute top-full left-0 right-0 z-10 px-6 lg:px-10 pt-3">
+      {/* Logo + navigation pills — sticky, follow on scroll, floating over the hero */}
+      <div className="sticky top-3 z-50 px-6 lg:px-10 -mb-16 pointer-events-none">
         <div className="flex items-center justify-between gap-4">
 
           {/* Logo pill — globe overflows the pill to stand out */}
-          <Link href="/" className={`flex items-center rounded-full px-4 py-1.5 ${glass}`}>
+          <Link href="/" className={`flex items-center rounded-full px-4 py-1.5 pointer-events-auto ${glass}`}>
             <Image
               src="/images/logo MUN.webp"
               alt="MUN Saint Dominique"
@@ -59,7 +58,7 @@ export default function Header() {
           </Link>
 
           {/* Navigation pill */}
-          <nav className={`hidden lg:flex items-center gap-1 rounded-full px-3 py-2 ${glass}`}>
+          <nav className={`hidden lg:flex items-center gap-1 rounded-full px-3 py-2 pointer-events-auto ${glass}`}>
             {navLinks.map(({ href, label }) => (
               <Link
                 key={href}
@@ -73,7 +72,7 @@ export default function Header() {
 
           {/* Mobile hamburger pill */}
           <button
-            className={`lg:hidden text-gray-800 p-3 rounded-full ${glass}`}
+            className={`lg:hidden text-gray-800 p-3 rounded-full pointer-events-auto ${glass}`}
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -88,7 +87,7 @@ export default function Header() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="lg:hidden mt-3 rounded-2xl bg-white/80 backdrop-blur-xl border-2 border-gray-400/80 px-6 py-5 flex flex-col gap-4 shadow-xl">
+          <div className="lg:hidden mt-3 rounded-2xl bg-white/80 backdrop-blur-xl border-2 border-gray-400/80 px-6 py-5 flex flex-col gap-4 shadow-xl pointer-events-auto">
             {navLinks.map(({ href, label }) => (
               <Link key={href} href={href} className="text-gray-800 hover:text-navy font-semibold uppercase tracking-wide text-sm" onClick={() => setOpen(false)}>
                 {label}
@@ -100,6 +99,6 @@ export default function Header() {
           </div>
         )}
       </div>
-    </header>
+    </>
   )
 }
