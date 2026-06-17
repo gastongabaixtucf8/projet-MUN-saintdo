@@ -55,18 +55,15 @@ export default function Header() {
         <div className="flex items-center justify-between gap-4">
 
           {/* Logo pill */}
-          <Link href="/" className={`flex items-center gap-3 rounded-full pl-2 pr-6 py-1.5 ${glass}`}>
+          <Link href="/" className={`flex items-center rounded-full px-6 py-2.5 ${glass}`}>
             <Image
               src="/images/logo MUN.webp"
               alt="MUN Saint Dominique"
-              width={44}
-              height={44}
-              className="rounded-full"
+              width={170}
+              height={53}
+              priority
+              className="h-9 w-auto"
             />
-            <div className="hidden sm:block leading-tight">
-              <p className="text-gray-800 font-bold text-sm">MUN Saint Dominique</p>
-              <p className="text-gray-500 text-[11px]">Institut Saint Dominique · Pau</p>
-            </div>
           </Link>
 
           {/* Navigation pill */}
