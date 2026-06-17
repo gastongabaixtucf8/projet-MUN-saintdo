@@ -3,12 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    @apply font-sans text-gray-800;
-  }
+  html { scroll-behavior: smooth; }
+  body { @apply font-sans text-gray-800 bg-white; }
 }
 
 @layer components {
@@ -18,14 +14,17 @@
   .btn-outline {
     @apply border-2 border-gold text-gold font-bold px-8 py-3 rounded-lg hover:bg-gold hover:text-navy transition-colors inline-block;
   }
+  .btn-white {
+    @apply bg-white text-navy font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors inline-block;
+  }
   .section-title {
     @apply text-3xl font-bold text-navy mb-6;
   }
   .nav-link {
-    @apply text-white hover:text-gold transition-colors font-medium;
+    @apply text-white/85 hover:text-gold transition-colors font-medium text-sm;
   }
   .card {
-    @apply bg-white rounded-xl shadow-md p-8 border-t-4 border-gold;
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-8;
   }
   .page-hero {
     @apply bg-navy text-white py-20 px-6 text-center;
