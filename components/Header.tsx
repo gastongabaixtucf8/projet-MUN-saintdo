@@ -86,7 +86,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-navy-mid border-t border-white/10 px-6 py-5 flex flex-col gap-4">
+        <div className="lg:hidden bg-navy-dark border-t border-white/10 px-6 py-5 flex flex-col gap-4">
           {navLinks.map(({ href, label }) => (
             <Link key={href} href={href} className="text-white hover:text-gold font-medium" onClick={() => setOpen(false)}>
               {label}
