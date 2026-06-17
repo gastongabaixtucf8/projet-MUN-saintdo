@@ -77,7 +77,7 @@ export default function PauPage() {
       </section>
 
       {/* About Pau */}
-      <section className="relative py-28 px-6 overflow-hidden mx-4 sm:mx-6 rounded-[2rem]">
+      <section className="relative py-28 px-6 overflow-hidden rounded-[2rem]">
         <div className="absolute inset-0">
           <Image src="/images/ville-de-pau.webp" alt="Pau" fill className="object-cover" />
           <div className="absolute inset-0 bg-navy/68" />
