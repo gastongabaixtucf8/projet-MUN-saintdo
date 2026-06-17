@@ -228,32 +228,56 @@ export default function PauPage() {
         <div className="max-w-5xl mx-auto">
           <h2 className="section-title text-4xl">Accommodation</h2>
           <p className="text-gray-600 text-lg mb-10 max-w-3xl">
-            Pau has a wide range of accommodation options. We recommend booking early, especially for the conference
-            weekend. Specific hotel recommendations with updated prices will be confirmed closer to the event.
+            The following partner hotels are offering preferential rates to MUN Saint Dominique participants. Rooms are
+            held for the conference only for a limited time, so we recommend booking early.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
-            {[
-              {
-                tag: 'Most Convenient',
-                title: 'Close to School',
-                body: 'Several hotels are located within a 5-minute walk of Institut Saint Dominique on Avenue Fouchet. For delegates who want to minimise travel between sessions and their room, this is the best option.',
-              },
-              {
-                tag: 'Best for Exploring',
-                title: 'City Centre',
-                body: 'Staying in Pau\'s city centre puts you close to the château, boulevard, restaurants, and shops. It\'s 10–15 minutes from the school by bus (€1.20 per journey on the Idelis network).',
-              },
-              {
-                tag: 'Best Value',
-                title: 'Budget Options',
-                body: 'There are affordable hotels, student residences, and hostels in and around Pau. Check major booking platforms in advance. Contact us if you need school-group accommodation advice.',
-              },
-            ].map(({ tag, title, body }) => (
-              <div key={title} className="card flex flex-col">
-                <p className="text-xs font-semibold text-gold uppercase tracking-widest mb-2">{tag}</p>
-                <h3 className="font-bold text-navy text-lg mb-3">{title}</h3>
-                <p className="text-gray-600 leading-relaxed flex-1">{body}</p>
+          <div className="flex flex-col gap-8 mb-10">
+            {hotels.map(({ name, stars, body, code, link, rates, extras }) => (
+              <div key={name} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <h3 className="text-2xl font-bold text-navy">{name}</h3>
+                  <span className="text-xs font-semibold text-gold uppercase tracking-widest bg-navy/5 px-3 py-1 rounded-full">
+                    {stars}
+                  </span>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-6">{body}</p>
+
+                {(code || link) && (
+                  <div className="flex flex-wrap items-center gap-4 mb-6">
+                    {code && (
+                      <div className="flex items-center gap-2 bg-gold/15 rounded-lg px-4 py-2">
+                        <span className="text-xs font-semibold uppercase tracking-widest text-gold">Booking code</span>
+                        <span className="font-bold text-navy">{code}</span>
+                      </div>
+                    )}
+                    {link && (
+                      <a href={link} target="_blank" rel="noopener noreferrer" className="text-navy-mid hover:text-gold transition-colors text-sm font-semibold underline">
+                        Visit website
+                      </a>
+                    )}
+                  </div>
+                )}
+
+                <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3 border-t border-gray-100 pt-6">
+                  {rates.map(({ label, price, was }) => (
+                    <div key={label} className="flex items-baseline justify-between gap-4">
+                      <span className="text-gray-700">{label}</span>
+                      <span className="font-bold text-navy whitespace-nowrap">
+                        {was && <span className="text-gray-400 font-normal line-through mr-2">{was}</span>}
+                        {price}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-x-8 gap-y-1 mt-5 text-sm text-gray-500">
+                  {extras.map(({ label, value }) => (
+                    <span key={label}>
+                      <span className="font-semibold text-gray-600">{label}:</span> {value}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
@@ -261,8 +285,8 @@ export default function PauPage() {
           <div className="bg-navy-mid text-white rounded-2xl p-8">
             <h3 className="text-xl font-bold mb-3">Need Accommodation Advice?</h3>
             <p className="text-white/75 leading-relaxed mb-6">
-              Detailed hotel information with specific recommendations and booking links will be published on this
-              page closer to the conference. For school group bookings, please contact us directly.
+              For school group bookings or any questions about accommodation in Pau, please contact us directly and
+              our team will be happy to help.
             </p>
             <Link href="/contact" className="btn-primary inline-block">Contact Us</Link>
           </div>
