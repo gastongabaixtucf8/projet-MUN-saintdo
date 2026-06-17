@@ -104,7 +104,7 @@ export default function Home() {
       </section>
 
       {/* Pau teaser */}
-      <section className="relative py-24 px-6 overflow-hidden mx-4 sm:mx-6 rounded-[2rem]">
+      <section className="relative py-24 px-6 overflow-hidden rounded-[2rem]">
         <div className="absolute inset-0">
           <Image src="/images/chateau-pau.webp" alt="Château de Pau" fill className="object-cover" />
           <div className="absolute inset-0 bg-navy/70" />
