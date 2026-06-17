@@ -77,13 +77,13 @@ export default function PauPage() {
       </section>
 
       {/* About Pau */}
-      <section className="relative py-28 px-6 overflow-hidden rounded-b-[2rem] bg-navy">
+      <section className="relative py-28 px-6 overflow-hidden rounded-b-[2rem]">
         <div className="absolute inset-0">
           <Image src="/images/pau.jpg" alt="Pau" fill className="object-cover opacity-40" />
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto text-white">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-8">Welcome to Pau</h2>
-          <div className="space-y-5 text-white/80 text-lg leading-relaxed">
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-navy">Welcome to Pau</h2>
+          <div className="space-y-5 text-gray-800 text-lg leading-relaxed">
             <p>
               Pau is a vibrant city of 80,000 inhabitants nestled at the foothills of the Pyrénées, in the heart of
               the Béarn region of southwestern France. Positioned between the Atlantic Ocean to the west and the
