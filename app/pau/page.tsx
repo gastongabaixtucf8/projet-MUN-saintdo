@@ -212,10 +212,18 @@ export default function PauPage() {
 
           {/* Pro Sky */}
           <div className="mt-10 bg-navy text-white rounded-2xl p-8">
-            <h3 className="text-xl font-bold mb-3">Official Travel Partner — Pro Sky</h3>
+            <h3 className="text-xl font-bold mb-3">
+              Official Travel Partner —{' '}
+              <a href="https://www.pro-sky.com/" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">
+                Pro Sky
+              </a>
+            </h3>
             <p className="text-white/75 leading-relaxed mb-6">
               Pro Sky is the official travel partner for MUN Saint Dominique, offering competitive group rates for
-              air and rail travel to Pau. Contact them directly for school group bookings.
+              air and rail travel to Pau. Contact them directly for school group bookings, or{' '}
+              <a href="https://www.pro-sky.com/" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">
+                visit pro-sky.com
+              </a>.
             </p>
             <div className="grid sm:grid-cols-2 gap-6">
               <div>
