@@ -4,6 +4,56 @@ import Link from 'next/link'
 
 export const metadata: Metadata = { title: 'Pau & Travel' }
 
+const hotels = [
+  {
+    name: 'Hôtel B&B Pau Zénith',
+    stars: '3-star',
+    body: 'A comfortable hotel offering single and double rooms, just 3 bus stops from the school. To enjoy the preferential rates below, simply book by phone or by email using the booking code.',
+    code: 'MUNSTDO26',
+    link: 'https://www.hotel-bb.com/fr',
+    rates: [
+      { label: 'Double room (1 large bed, sleeps 2)', price: '€69' },
+      { label: 'Twin room (2 single beds)', price: '€69' },
+      { label: 'Quad room (1 double + 2 single beds)', price: '€90' },
+    ],
+    extras: [
+      { label: 'Breakfast', value: '€11.90 per person' },
+      { label: 'City tax (18+)', value: '€1.63 per person' },
+    ],
+  },
+  {
+    name: 'Kyriad Prestige Pau',
+    stars: '4-star',
+    body: 'A 4-star hotel with the "La Boucherie" restaurant on the ground floor, offering high-quality comfort just 3 bus stops from the school. A number of single and double / twin rooms are reserved for conference participants at the preferential rates below.',
+    code: null,
+    link: null,
+    rates: [
+      { label: 'Single room', price: '€101' },
+      { label: 'Double or twin room', price: '€118' },
+    ],
+    extras: [
+      { label: 'City tax', value: '€2.07 per person' },
+    ],
+  },
+  {
+    name: 'Hôtel Pau-Université',
+    stars: '3-star',
+    body: 'A comfortable and very well-located hotel near the university, with easy access to the school and the city centre. Use the discount code below to unlock our special conference rates.',
+    code: 'SAINTDO 2026',
+    link: 'https://ostalhotel-pau.com',
+    rates: [
+      { label: 'Double room', price: '€72', was: '€85' },
+      { label: 'Twin room', price: '€75', was: '€89' },
+      { label: 'Triple room', price: '€90', was: '€110' },
+      { label: 'Quad room', price: '€98', was: '€120' },
+    ],
+    extras: [
+      { label: 'Buffet breakfast', value: '€12' },
+      { label: 'City tax', value: '€1.67 per person' },
+    ],
+  },
+]
+
 export default function PauPage() {
   return (
     <main>
