@@ -220,23 +220,25 @@ export default function PauPage() {
             </h3>
             <p className="text-white/75 leading-relaxed mb-6">
               Pro Sky is the official travel partner for MUN Saint Dominique, offering competitive group rates for
-              air and rail travel to Pau. Contact them directly for school group bookings, or{' '}
-              <a href="https://www.pro-sky.com/" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">
-                visit pro-sky.com
-              </a>.
+              air and rail travel to Pau. Feel free to get in touch with them now!
             </p>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div>
-                <p className="text-gold font-semibold text-xs uppercase tracking-widest mb-1">UK & Southern Europe</p>
+            <div className="grid sm:grid-cols-2 gap-6 mb-8">
+              <div className="space-y-1">
+                <p className="text-gold font-semibold text-xs uppercase tracking-widest mb-2">For UK, Southern European and other customers</p>
                 <p className="text-white/75">Karina Balbino</p>
-                <a href="tel:+33788862559" className="text-white/60 hover:text-gold transition-colors">+33 7 88 86 25 59</a>
+                <a href="mailto:karina.balbino@pro-sky.com" className="block text-white/60 hover:text-gold transition-colors break-all">karina.balbino@pro-sky.com</a>
+                <a href="tel:+33788862559" className="block text-white/60 hover:text-gold transition-colors">Tel: +33 07 88 86 25 59</a>
               </div>
-              <div>
-                <p className="text-gold font-semibold text-xs uppercase tracking-widest mb-1">Germany & Northern Europe</p>
+              <div className="space-y-1">
+                <p className="text-gold font-semibold text-xs uppercase tracking-widest mb-2">For German, Austrian and Northern customers</p>
                 <p className="text-white/75">André Saak</p>
-                <a href="tel:+492219204424" className="text-white/60 hover:text-gold transition-colors">+49 221 9204424</a>
+                <a href="mailto:Andre.Saak@pro-sky.com" className="block text-white/60 hover:text-gold transition-colors break-all">Andre.Saak@pro-sky.com</a>
+                <a href="tel:+492219204424" className="block text-white/60 hover:text-gold transition-colors">Tel: +49 221 9204424</a>
               </div>
             </div>
+            <a href="https://www.pro-sky.com/" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block">
+              Go to Pro Sky
+            </a>
           </div>
         </div>
       </section>
