@@ -145,9 +145,18 @@ export default async function MUN2027Page() {
                 The topic documents for each committee — background guides, key questions, and recommended
                 sources to help you prepare your position papers.
               </p>
-              <span className="inline-block text-center bg-gray-100 text-gray-400 font-semibold px-8 py-3 rounded-lg text-sm">
-                Coming Soon
-              </span>
+              {committeeTopics?.url
+                ? (
+                  <a href={committeeTopics.url} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm text-center">
+                    Download PDF
+                  </a>
+                )
+                : (
+                  <span className="inline-block text-center bg-gray-100 text-gray-400 font-semibold px-8 py-3 rounded-lg text-sm">
+                    Coming Soon
+                  </span>
+                )
+              }
             </div>
 
           </div>
