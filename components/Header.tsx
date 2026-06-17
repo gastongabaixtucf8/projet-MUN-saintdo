@@ -21,8 +21,8 @@ export default function Header() {
   return (
     <header className="relative z-50">
 
-      {/* Top bar: socials + Apply button — collapses away on scroll */}
-      <div className={`bg-white relative z-20 overflow-hidden transition-all duration-300 ${scrolled ? 'max-h-0 opacity-0' : 'max-h-24 opacity-100'}`}>
+      {/* Top bar: socials + Apply button */}
+      <div className="bg-white relative z-20">
         <div className="px-6 lg:px-10 py-2.5 flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <a href="https://www.instagram.com/mun_saintdo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-full bg-navy-dark text-white flex items-center justify-center hover:bg-navy-mid transition-colors">
