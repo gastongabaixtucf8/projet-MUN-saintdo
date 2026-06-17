@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -13,16 +13,24 @@ const navLinks = [
   { href: '/contact', label: 'Contact' },
 ]
 
-const glass = 'bg-white/30 backdrop-blur-md backdrop-saturate-150 border border-white/40 shadow-lg shadow-black/10'
+const glass = 'bg-white/30 backdrop-blur-md backdrop-saturate-150 border border-gray-300/70 shadow-lg shadow-black/10'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
     <header className="sticky top-0 z-50">
 
-      {/* Top bar: solid white, social circles + Apply button */}
-      <div className="bg-white relative z-20">
+      {/* Top bar: socials + Apply button — collapses away on scroll */}
+      <div className={`bg-white relative z-20 overflow-hidden transition-all duration-300 ${scrolled ? 'max-h-0 opacity-0' : 'max-h-24 opacity-100'}`}>
         <div className="px-6 lg:px-10 py-2.5 flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <a href="https://www.instagram.com/mun_saintdo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-full bg-navy-dark text-white flex items-center justify-center hover:bg-navy-mid transition-colors">
@@ -91,7 +99,7 @@ export default function Header() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="lg:hidden mt-3 rounded-2xl bg-white/80 backdrop-blur-xl border border-white/50 px-6 py-5 flex flex-col gap-4 shadow-xl">
+          <div className="lg:hidden mt-3 rounded-2xl bg-white/80 backdrop-blur-xl border border-gray-300/70 px-6 py-5 flex flex-col gap-4 shadow-xl">
             {navLinks.map(({ href, label }) => (
               <Link key={href} href={href} className="text-gray-800 hover:text-navy font-semibold uppercase tracking-wide text-sm" onClick={() => setOpen(false)}>
                 {label}
