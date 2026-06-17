@@ -79,7 +79,7 @@ export default function PauPage() {
       {/* About Pau */}
       <section className="relative py-28 px-6 overflow-hidden rounded-b-[2rem]">
         <div className="absolute inset-0">
-          <Image src="/images/pau.jpg" alt="Pau" fill className="object-cover opacity-60" />
+          <Image src="/images/pau.jpg" alt="Pau" fill className="object-cover opacity-50" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-navy">Welcome to Pau</h2>
