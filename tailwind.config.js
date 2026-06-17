@@ -8,9 +8,9 @@ module.exports = {
     extend: {
       colors: {
         'navy-dark': '#0e1f42',
-        navy: '#2a5298',
-        'navy-mid': '#3f6cb5',
-        'navy-light': '#5e88d0',
+        navy: '#1f4280',
+        'navy-mid': '#34609f',
+        'navy-light': '#5180c5',
         gold: '#c9a84c',
       },
       fontFamily: {
