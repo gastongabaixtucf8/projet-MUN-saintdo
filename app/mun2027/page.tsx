@@ -67,30 +67,6 @@ export default async function MUN2027Page() {
         </div>
       </section>
 
-      {/* Committees */}
-      <section className="py-24 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="section-title text-4xl">Committees</h2>
-          <p className="text-gray-600 text-lg mb-10 max-w-3xl">
-            Committee topics and assignments will be published here once confirmed. All registered delegates will also
-            receive this information directly via MyMUN.
-          </p>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {committees.map(({ name, short, desc }) => (
-              <div key={short} className="card flex gap-5 items-start">
-                <div className="w-14 h-14 bg-navy rounded-xl flex items-center justify-center shrink-0">
-                  <span className="text-gold text-xs font-bold text-center leading-tight">{short}</span>
-                </div>
-                <div>
-                  <p className="font-bold text-navy text-lg mb-1">{name}</p>
-                  <p className="text-gray-400 italic text-sm">{desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Documents */}
       <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
