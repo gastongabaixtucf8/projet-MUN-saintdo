@@ -4,7 +4,18 @@ import Link from 'next/link'
 
 export const metadata: Metadata = { title: 'Pau & Travel' }
 
-const hotels = [
+type Rate = { label: string; price: string; was?: string }
+type Hotel = {
+  name: string
+  stars: string
+  body: string
+  code: string | null
+  link: string | null
+  rates: Rate[]
+  extras: { label: string; value: string }[]
+}
+
+const hotels: Hotel[] = [
   {
     name: 'Hôtel B&B Pau Zénith',
     stars: '3-star',
