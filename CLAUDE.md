@@ -30,7 +30,10 @@ The Sanity project is already created (project ID `3pjewoqe`) and both env files
 ```
 NEXT_PUBLIC_SANITY_PROJECT_ID=3pjewoqe
 NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=   # contact form delivery (see below)
 ```
+
+The contact form (`components/ContactForm.tsx`) sends submissions to `mun@saintdominique.fr` via [Web3Forms](https://web3forms.com). Get a free access key for that address and set it in `.env.local` and in the Vercel project env vars. Until the key is set, the form will show an error on submit.
 
 **Studio** — `studio/.env`:
 ```
