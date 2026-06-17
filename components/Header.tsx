@@ -78,7 +78,7 @@ export default function Header() {
           </nav>
 
           <button
-            className={`lg:hidden text-white p-2 shrink-0 ${scrolled ? 'absolute right-6' : ''}`}
+            className="lg:hidden text-white p-2 shrink-0"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
