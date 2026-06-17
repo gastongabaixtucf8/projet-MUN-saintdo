@@ -133,7 +133,7 @@ export default function AboutPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {secretariat.map(({ role, name, photo, quote }) => (
               <div key={name} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col">
-                <div className="relative h-72 bg-gray-100">
+                <div className="relative h-96 bg-gray-100">
                   <Image
                     src={photo}
                     alt={name}
