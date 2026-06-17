@@ -27,7 +27,7 @@
     @apply bg-white rounded-xl shadow-sm border border-gray-100 p-8;
   }
   .page-hero {
-    @apply bg-navy text-white py-20 px-6 text-center;
+    @apply bg-navy text-white py-20 px-6 text-center rounded-b-[2.5rem];
   }
   .form-input {
     @apply w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:border-navy-mid focus:ring-1 focus:ring-navy-mid;
