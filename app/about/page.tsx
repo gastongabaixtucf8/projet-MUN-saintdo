@@ -131,15 +131,16 @@ export default function AboutPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {secretariat.map(({ role, name, quote }) => (
+            {secretariat.map(({ role, name, photo, quote }) => (
               <div key={name} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col">
-                {/* Photo placeholder */}
-                <div className="h-56 bg-gradient-to-br from-navy to-navy-mid flex items-center justify-center">
-                  <div className="w-24 h-24 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center">
-                    <svg width="40" height="40" fill="none" stroke="white" strokeWidth="1.5" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
-                    </svg>
-                  </div>
+                <div className="relative h-72 bg-gray-100">
+                  <Image
+                    src={photo}
+                    alt={name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover object-top"
+                  />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <p className="text-gold font-semibold text-xs uppercase tracking-widest mb-1">{role}</p>
