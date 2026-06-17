@@ -12,13 +12,6 @@ async function getProgramme(): Promise<{ url: string } | null> {
   )
 }
 
-const committees = [
-  { name: 'General Assembly', short: 'UNGA', desc: 'Topic to be announced' },
-  { name: 'Security Council', short: 'UNSC', desc: 'Topic to be announced' },
-  { name: 'Human Rights Council', short: 'HRC', desc: 'Topic to be announced' },
-  { name: 'Economic & Social Council', short: 'ECOSOC', desc: 'Topic to be announced' },
-]
-
 export default async function MUN2027Page() {
   const programme = await getProgramme()
 
