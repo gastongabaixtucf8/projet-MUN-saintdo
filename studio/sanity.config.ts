@@ -27,6 +27,15 @@ export default defineConfig({
                   .documentId('programme-singleton')
                   .title('Programme PDF'),
               ),
+            S.listItem()
+              .title('Committee Topics PDF')
+              .id('committee-topics-singleton')
+              .child(
+                S.document()
+                  .schemaType('committeeTopicsDocument')
+                  .documentId('committee-topics-singleton')
+                  .title('Committee Topics PDF'),
+              ),
           ]),
     }),
     visionTool(),
