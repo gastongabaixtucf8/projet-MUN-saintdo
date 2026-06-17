@@ -48,7 +48,7 @@ export default async function MUN2027Page() {
             </div>
             <div className="space-y-4">
               {[
-                { label: 'Dates', value: 'March 2027 — exact dates to be confirmed' },
+                { label: 'Dates', value: '19, 20 & 21 March 2027' },
                 { label: 'Location', value: 'Institut Saint Dominique, 30 Avenue Fouchet, 64000 Pau' },
                 { label: 'Language', value: 'English' },
                 { label: 'Registration', value: 'Via MyMUN (mymun.com)' },
