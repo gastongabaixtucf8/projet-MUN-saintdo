@@ -69,7 +69,7 @@ export default function Home() {
       </section>
 
       {/* Conference theme placeholder */}
-      <section className="py-24 px-6 bg-navy-mid text-white text-center">
+      <section className="py-24 px-6 bg-navy-mid text-white text-center rounded-[2rem]">
         <div className="max-w-3xl mx-auto">
           <p className="text-gold uppercase tracking-widest text-xs font-semibold mb-4">MUN Saint Dominique 2027</p>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">Conference Theme</h2>
