@@ -230,7 +230,6 @@ export default function PauPage() {
               </div>
               <div className="space-y-1">
                 <p className="text-gold font-semibold text-xs uppercase tracking-widest mb-2">For German, Austrian and Northern customers</p>
-                <p className="text-white/75">André Saak</p>
                 <a href="mailto:Andre.Saak@pro-sky.com" className="block text-white/60 hover:text-gold transition-colors break-all">Andre.Saak@pro-sky.com</a>
                 <a href="tel:+492219204424" className="block text-white/60 hover:text-gold transition-colors">Tel: +49 221 9204424</a>
               </div>
