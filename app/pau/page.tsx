@@ -225,7 +225,6 @@ export default function PauPage() {
             <div className="grid sm:grid-cols-2 gap-6 mb-8">
               <div className="space-y-1">
                 <p className="text-gold font-semibold text-xs uppercase tracking-widest mb-2">For UK, Southern European and other customers</p>
-                <p className="text-white/75">Karina Balbino</p>
                 <a href="mailto:karina.balbino@pro-sky.com" className="block text-white/60 hover:text-gold transition-colors break-all">karina.balbino@pro-sky.com</a>
                 <a href="tel:+33788862559" className="block text-white/60 hover:text-gold transition-colors">Tel: +33 07 88 86 25 59</a>
               </div>
