@@ -103,6 +103,11 @@ Three document types: `galleryPhoto` (image + optional caption), `programDocumen
 - Committees: UNGA, UNSC, HRC, ECOSOC (topics to be announced)
 - The organising committee currently shown on `/about` is the 2025–2026 team; the 2027 committee is confirmed in September 2026.
 
+## Caching & replacing images
+
+- Pages and local media are served with `Cache-Control: public, max-age=0, must-revalidate` (see `next.config.ts` `headers()`), so visitors always get the latest version without a forced refresh.
+- **When replacing an image, give it a NEW filename** (e.g. `pau.jpg` → `pau-2.jpg`) and update the reference. The Next.js image optimizer caches optimized images by source URL, so reusing the same filename can still serve the old picture. A new filename guarantees the new image shows.
+
 ## Writing rules
 
 - **Never use emojis** anywhere in the codebase — not in JSX, not in text content, not in comments. Use SVG icons or plain text labels instead.
