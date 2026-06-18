@@ -33,9 +33,8 @@ export default function AboutPage() {
                 school through to the end of lycée.
               </p>
               <p>
-                Three core values guide everything we do: <strong>Balance</strong> — attentive listening and high expectations;
-                <strong> Coherence</strong> — rigorous teaching and enriching international projects; and <strong>Unity</strong> — a
-                Christian-inspired spiritual outlook that fosters personal growth without ideological constraints.
+                Everything we do is guided by a triple pursuit — the search for <strong>balance</strong>, the quest for
+                <strong> coherence</strong>, and the pursuit of <strong>unity</strong> — which you can read about just below.
               </p>
             </div>
             <div className="space-y-4">
