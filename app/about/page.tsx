@@ -1,41 +1,9 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import OrganisingCommittee from '@/components/OrganisingCommittee'
 
 export const metadata: Metadata = { title: 'About Us' }
-
-const secretariat = [
-  {
-    role: 'Secretary General',
-    name: 'Mathilda Rossignol',
-    photo: '/images/mathilda-rossignol.png',
-    quote: 'I am fully committed to MUN because I believe that debate is key to finding solutions, and that we should never underestimate the power of words, especially in today\'s world.',
-  },
-  {
-    role: 'Secretary General',
-    name: 'Samuel Boisseau',
-    photo: '/images/samuel-boisseau.jpeg',
-    quote: 'I believe that Saint Dominique\'s MUN is a great opportunity for people of all around the world to come together and try to tackle current issues and exercise public speaking and diplomacy in a world where truth and words seem to hold less and less power everyday.',
-  },
-  {
-    role: 'Vice Secretary General',
-    name: 'Samuel Létang',
-    photo: '/images/samuel-letang.png',
-    quote: 'I\'m glad we have the opportunity to host this year. Last year, I liked every moment. Now, I would like to make sure new students can enjoy MUN as much as I did.',
-  },
-  {
-    role: 'Vice Secretary General',
-    name: 'Zoë Chaffiotte',
-    photo: '/images/zoe-chaffiotte.jpeg',
-    quote: 'I know how important these conferences are to share our voices together and debate about current issues in the world. As we all know, there are many ongoing crises around the world and speaking is the first step to ensure a better future.',
-  },
-  {
-    role: 'Head of Press Team',
-    name: 'Gabriel Galdiolo',
-    photo: '/images/gabriel-galdiolo.jpeg',
-    quote: 'My job, along with the other members of the press team, will be to give visibility to the conference and show how it unfolds. We will also make sure to create lasting memories of the moments of debate and of all the special events.',
-  },
-]
 
 export default function AboutPage() {
   return (
