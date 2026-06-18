@@ -59,8 +59,45 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* MUN Programme */}
+      {/* Our Philosophy */}
       <section className="py-24 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14 max-w-3xl mx-auto">
+            <h2 className="section-title text-4xl">Our Philosophy</h2>
+            <p className="text-gray-500 text-lg">
+              At Institut Saint Dominique, our educational philosophy is rooted in a triple pursuit.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                number: '01',
+                title: 'The Search for Balance',
+                body: 'Our administrative and pastoral teams are committed to supporting students with a blend of attentive listening, high expectations, and unwavering kindness. This balance forms the cornerstone of our educational relationships, ensuring that each student feels valued and motivated to achieve their best.',
+              },
+              {
+                number: '02',
+                title: 'The Quest for Coherence',
+                body: 'Our teaching staff is dedicated to making the academic journey meaningful. They engage students not only through rigorous classroom instruction and exam preparation but also by leading numerous enriching projects such as educational trips, outings, and challenges. These activities serve as gateways to cultural enrichment, providing students with a well-rounded educational experience.',
+              },
+              {
+                number: '03',
+                title: 'The Pursuit of Unity',
+                body: 'Our spiritual guidance team offers students the opportunity to explore an inner Word that harmonizes all aspects of their being. This spiritual journey, inspired by Christian faith, does not confine students to a particular ideology but rather opens new perspectives on life, fostering personal growth and happiness.',
+              },
+            ].map(({ number, title, body }) => (
+              <div key={number} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 flex flex-col">
+                <span className="text-gold font-bold text-3xl mb-4">{number}</span>
+                <h3 className="font-bold text-navy text-xl mb-3">{title}</h3>
+                <p className="text-gray-600 leading-relaxed">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* MUN Programme */}
+      <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="section-title text-4xl">Our MUN Programme</h2>
           <div className="space-y-5 text-gray-700 leading-relaxed text-lg mb-12 max-w-4xl">
