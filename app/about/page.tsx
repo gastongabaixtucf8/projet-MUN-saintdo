@@ -124,7 +124,7 @@ export default function AboutPage() {
       </section>
 
       {/* Organising Committee */}
-      <OrganisingCommittee />
+      <OrganisingCommittee className="bg-gray-50" />
 
       {/* Alleyn's */}
       <section className="relative py-24 px-6 overflow-hidden rounded-t-[2rem]">
