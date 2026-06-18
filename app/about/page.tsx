@@ -16,6 +16,20 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Video */}
+      <section className="px-4 sm:px-6 py-12">
+        <div className="max-w-6xl mx-auto rounded-[2rem] overflow-hidden shadow-lg">
+          <video
+            src="/saint-dominique-video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-auto block"
+          />
+        </div>
+      </section>
+
       {/* Institut Saint Dominique */}
       <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
