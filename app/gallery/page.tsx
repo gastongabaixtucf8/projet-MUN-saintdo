@@ -8,7 +8,7 @@ type Photo = { _id: string; url: string; caption?: string }
 
 async function getPhotos(): Promise<Photo[]> {
   return client.fetch(
-    `*[_type == "galleryPhoto"] | order(_createdAt desc) {
+    `*[_type == "galleryPhoto"] | order(_createdAt asc) {
       _id,
       caption,
       "url": image.asset->url
