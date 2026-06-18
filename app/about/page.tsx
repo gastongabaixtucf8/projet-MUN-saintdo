@@ -139,7 +139,7 @@ export default function AboutPage() {
       {/* Alleyn's */}
       <section className="relative py-24 px-6 overflow-hidden rounded-t-[2rem]">
         <div className="absolute inset-0">
-          <Image src="/images/alleyns-school.jpg" alt="Alleyn's School" fill className="object-cover" />
+          <Image src="/images/alleyns-school.webp" alt="Alleyn's School" fill className="object-cover" />
           <div className="absolute inset-0 bg-navy/75" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto">
