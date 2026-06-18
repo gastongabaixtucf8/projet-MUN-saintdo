@@ -75,6 +75,9 @@ export default async function MUN2027Page() {
         </div>
       </section>
 
+      {/* Organising Committee */}
+      <OrganisingCommittee className="bg-gray-50" />
+
       {/* Documents */}
       <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
