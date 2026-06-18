@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { client } from '@/lib/sanity/client'
+import OrganisingCommittee from '@/components/OrganisingCommittee'
 
 export const metadata: Metadata = { title: 'MUN 2027' }
 
