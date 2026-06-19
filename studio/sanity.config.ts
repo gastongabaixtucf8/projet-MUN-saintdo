@@ -19,6 +19,14 @@ export default defineConfig({
               .schemaType('galleryPhoto')
               .child(S.documentTypeList('galleryPhoto').title('Gallery Photos')),
             S.listItem()
+              .title('Organising Committee')
+              .schemaType('committeeMember')
+              .child(
+                S.documentTypeList('committeeMember')
+                  .title('Organising Committee')
+                  .defaultOrdering([{ field: 'order', direction: 'asc' }]),
+              ),
+            S.listItem()
               .title('Programme PDF')
               .id('programme-singleton')
               .child(
