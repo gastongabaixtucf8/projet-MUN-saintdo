@@ -90,6 +90,7 @@ export default function GalleryGrid({ photos }: { photos: Photo[] }) {
                 sizes="100vw"
                 className="object-contain"
                 priority
+                unoptimized
               />
             </div>
             {active.caption && (
