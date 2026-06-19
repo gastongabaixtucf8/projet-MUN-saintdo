@@ -62,7 +62,7 @@ export default defineConfig({
     // Singletons must never be deleted (deleting them leaves the Studio in a
     // stuck "read-only" state). Allow editing the file, but not delete/duplicate.
     actions: (prev, context) =>
-      ['programDocument', 'committeeTopicsDocument'].includes(context.schemaType)
+      ['programDocument', 'committeeTopicsDocument', 'delegateGuideDocument'].includes(context.schemaType)
         ? prev.filter(({ action }) => action !== 'delete' && action !== 'duplicate')
         : prev,
   },
