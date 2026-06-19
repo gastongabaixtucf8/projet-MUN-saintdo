@@ -21,8 +21,20 @@ async function getCommitteeTopics(): Promise<{ url: string } | null> {
   )
 }
 
+async function getDelegateGuide(): Promise<{ url: string } | null> {
+  return client.fetch(
+    `*[_type == "delegateGuideDocument" && _id == "delegate-guide-singleton"][0]{ "url": file.asset->url }`,
+    {},
+    { cache: 'no-store' },
+  )
+}
+
 export default async function MUN2027Page() {
-  const [programme, committeeTopics] = await Promise.all([getProgramme(), getCommitteeTopics()])
+  const [programme, committeeTopics, delegateGuide] = await Promise.all([
+    getProgramme(),
+    getCommitteeTopics(),
+    getDelegateGuide(),
+  ])
 
   return (
     <main>
