@@ -13,4 +13,11 @@ export const programDocument = defineType({
       options: { accept: 'application/pdf' },
     }),
   ],
+  preview: {
+    select: { hasFile: 'file.asset' },
+    prepare: ({ hasFile }) => ({
+      title: 'Programme PDF',
+      subtitle: hasFile ? 'PDF uploaded' : 'No file uploaded yet',
+    }),
+  },
 })
