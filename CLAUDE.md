@@ -90,17 +90,19 @@ projet-mun/
 
 ## How content works
 
-Most page content is hardcoded in the `app/**/page.tsx` files — to change copy, edit the JSX. Sanity drives three things, all editable in the Studio (login required) and live without a redeploy:
+Most page content is hardcoded in the `app/**/page.tsx` files — to change copy, edit the JSX. Sanity drives the following, all editable in the Studio (login required) and live without a redeploy:
 
-- **Gallery photos** — `/gallery` fetches `*[_type == "galleryPhoto"] | order(_createdAt desc)`. Studio → **Gallery Photos**.
-- **Programme PDF** — `/mun2027` fetches the `programDocument` singleton. Studio → **Programme PDF**. Shows "Coming Soon" until uploaded.
-- **Committee Topics PDF** — `/mun2027` fetches the `committeeTopicsDocument` singleton. Studio → **Committee Topics PDF**. Shows "Coming Soon" until uploaded.
+- **Gallery photos** — `/gallery` fetches `*[_type == "galleryPhoto"] | order(_createdAt desc)`. Studio → **Gallery Photos**. The `GalleryGrid` client component shows a click-to-enlarge lightbox (full-res `unoptimized` image).
+- **Programme PDF / Committee Topics PDF / Delegate Guide PDF** — `/mun2027` fetches the `programDocument`, `committeeTopicsDocument`, and `delegateGuideDocument` singletons. Studio → the matching item. Programme/Committee Topics show "Coming Soon" until uploaded; the Delegate Guide falls back to the static `/delegates-guide.pdf`.
+- **Organising committee** — `components/OrganisingCommittee.tsx` (used on `/mun2027`) fetches `*[_type == "committeeMember"] | order(order asc)`. Studio → **Organising Committee**. Admins edit each member's photo, name, role, quote, and order. If Sanity has no members, the component falls back to the 5 hardcoded members.
 
-To **replace a PDF**, edit the file field on the existing singleton and Publish — do NOT delete the document (the Delete action is disabled on singletons to prevent the Studio getting stuck in a deleted/read-only state).
+To **replace a PDF**, edit the file field on the existing singleton and Publish — do NOT delete the document (the Delete action is disabled on PDF singletons to prevent the Studio getting stuck in a deleted/read-only state).
 
 ## Sanity schema
 
-Three document types: `galleryPhoto` (image + optional caption), `programDocument` and `committeeTopicsDocument` (each a single PDF `file` field, used as a singleton). The old test `siteSettings` type has been removed. `sanity.config.ts` disables the `delete`/`duplicate` actions for the singleton types.
+Document types: `galleryPhoto` (image + caption), `programDocument` / `committeeTopicsDocument` / `delegateGuideDocument` (single PDF `file`, used as singletons), and `committeeMember` (name, role, photo, quote, order). The old test `siteSettings` type was removed. `sanity.config.ts` disables `delete`/`duplicate` for the PDF singleton types.
+
+**Gotcha — document ids must not contain a dot.** The newest Sanity API treats an id like `committee.mathilda` as a *release/version* (`<release>.<base>`), which is **invisible to the anonymous/published perspective** the live site uses (the Studio still shows it, so it looks fine in admin but is missing on the site). Always use dot-free ids (e.g. `committee-mathilda`). When seeding documents, `sanity documents create <file> --replace` takes **one JSON object per call** (loop line by line); multi-line ndjson fails to parse.
 
 ## Design / theme
 
