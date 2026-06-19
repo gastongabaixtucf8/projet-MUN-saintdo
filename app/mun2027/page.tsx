@@ -114,7 +114,7 @@ export default async function MUN2027Page() {
                 in committee, and everything else you need to know.
               </p>
               <a
-                href="/delegates-guide.pdf"
+                href={delegateGuide?.url || '/delegates-guide.pdf'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary text-sm text-center"
