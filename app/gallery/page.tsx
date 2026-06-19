@@ -48,19 +48,7 @@ export default async function GalleryPage() {
               </p>
             </div>
           ) : (
-            <div className="columns-2 sm:columns-3 lg:columns-4 gap-3 space-y-3">
-              {photos.map((photo) => (
-                <div key={photo._id} className="break-inside-avoid rounded-xl overflow-hidden shadow-sm">
-                  <Image
-                    src={photo.url}
-                    alt={photo.caption || 'MUN Saint Dominique'}
-                    width={600}
-                    height={400}
-                    className="w-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+            <GalleryGrid photos={photos} />
           )}
 
         </div>
