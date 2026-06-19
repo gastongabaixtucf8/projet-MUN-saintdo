@@ -76,7 +76,9 @@ projet-mun/
 │       ├── index.ts
 │       ├── galleryPhoto.ts             — image + optional caption
 │       ├── programDocument.ts          — programme PDF (singleton "programme-singleton")
-│       └── committeeTopicsDocument.ts  — committee topics PDF (singleton "committee-topics-singleton")
+│       ├── committeeTopicsDocument.ts  — committee topics PDF (singleton "committee-topics-singleton")
+│       ├── delegateGuideDocument.ts    — delegate guide PDF (singleton "delegate-guide-singleton")
+│       └── committeeMember.ts          — organising committee member (name, role, photo, quote, order)
 ├── public/
 │   ├── images/                 — logo, hero, committee photos, Pau photos (served)
 │   ├── saint-dominique-video.mp4 — About page autoplay video (~30 MB)
