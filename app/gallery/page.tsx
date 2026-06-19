@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import { client } from '@/lib/sanity/client'
+import GalleryGrid from '@/components/GalleryGrid'
 
 export const metadata: Metadata = { title: 'Gallery' }
 
