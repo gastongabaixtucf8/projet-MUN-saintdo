@@ -2,9 +2,10 @@
 
 import { useState } from 'react'
 
-// Web3Forms access key — get one free at web3forms.com for mun@saintdominique.fr,
-// then set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in .env.local and in the Vercel project.
-const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+// Web3Forms access key for mun@saintdominique.fr. This is a public client-side key
+// (it ships in the browser bundle either way), so it lives here directly. An env var
+// (NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY) overrides it if set.
+const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || '4b915ab6-7ead-4ff8-a42a-019a3f2fed6d'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
