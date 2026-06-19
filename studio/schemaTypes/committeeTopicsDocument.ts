@@ -13,4 +13,11 @@ export const committeeTopicsDocument = defineType({
       options: { accept: 'application/pdf' },
     }),
   ],
+  preview: {
+    select: { hasFile: 'file.asset' },
+    prepare: ({ hasFile }) => ({
+      title: 'Committee Topics PDF',
+      subtitle: hasFile ? 'PDF uploaded' : 'No file uploaded yet',
+    }),
+  },
 })
