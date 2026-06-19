@@ -44,6 +44,15 @@ export default defineConfig({
                   .documentId('committee-topics-singleton')
                   .title('Committee Topics PDF'),
               ),
+            S.listItem()
+              .title('Delegate Guide PDF')
+              .id('delegate-guide-singleton')
+              .child(
+                S.document()
+                  .schemaType('delegateGuideDocument')
+                  .documentId('delegate-guide-singleton')
+                  .title('Delegate Guide PDF'),
+              ),
           ]),
     }),
     visionTool(),
