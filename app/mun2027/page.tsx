@@ -151,7 +151,7 @@ export default async function MUN2027Page() {
 
             {/* Committee Topics */}
             <div className="card flex flex-col">
-              <div className="w-12 h-12 bg-navy-light rounded-xl flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-navy rounded-xl flex items-center justify-center mb-4">
                 <svg width="22" height="22" fill="none" stroke="white" strokeWidth="1.8" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"/>
                 </svg>
